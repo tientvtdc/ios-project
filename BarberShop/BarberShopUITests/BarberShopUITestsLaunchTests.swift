@@ -1,13 +1,13 @@
 //
-//  BarberShopUITestsLaunchTests.swift
-//  BarberShopUITests
+//  barbershopUITestsLaunchTests.swift
+//  barbershopUITests
 //
 //  Created by Truong Tien on 18/05/2022.
 //
 
 import XCTest
 
-class BarberShopUITestsLaunchTests: XCTestCase {
+class barbershopUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

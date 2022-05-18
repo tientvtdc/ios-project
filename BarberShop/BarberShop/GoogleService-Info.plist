@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1031894861396-lnvq5u2ufq1tqnehoir4egid9kqei4us.apps.googleusercontent.com</string>
+	<string>1031894861396-gk0ci8bscmq18aittv96uhn667ejekga.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1031894861396-lnvq5u2ufq1tqnehoir4egid9kqei4us</string>
+	<string>com.googleusercontent.apps.1031894861396-gk0ci8bscmq18aittv96uhn667ejekga</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>1031894861396-h88vkvd26837bs5vp2sihdh4fm59fn2q.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>vn.edu.tdc.BarberShop</string>
+	<string>vn.edu.tdc.barbershop</string>
 	<key>PROJECT_ID</key>
 	<string>barber-shop-group-1</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1031894861396:ios:38e1790028fb5f2012cfc1</string>
+	<string>1:1031894861396:ios:cdb91a8e48a184f912cfc1</string>
 	<key>DATABASE_URL</key>
 	<string>https://barber-shop-group-1-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>

@@ -7,66 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BEDB31B2834B5DC00D38D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB31A2834B5DC00D38D59 /* AppDelegate.swift */; };
-		9BEDB31D2834B5DC00D38D59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB31C2834B5DC00D38D59 /* SceneDelegate.swift */; };
-		9BEDB31F2834B5DC00D38D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB31E2834B5DC00D38D59 /* ViewController.swift */; };
-		9BEDB3222834B5DC00D38D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEDB3202834B5DC00D38D59 /* Main.storyboard */; };
-		9BEDB3242834B5E000D38D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEDB3232834B5E000D38D59 /* Assets.xcassets */; };
-		9BEDB3272834B5E000D38D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEDB3252834B5E000D38D59 /* LaunchScreen.storyboard */; };
-		9BEDB3322834B5E000D38D59 /* BarberShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB3312834B5E000D38D59 /* BarberShopTests.swift */; };
-		9BEDB33C2834B5E100D38D59 /* BarberShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB33B2834B5E100D38D59 /* BarberShopUITests.swift */; };
-		9BEDB33E2834B5E100D38D59 /* BarberShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDB33D2834B5E100D38D59 /* BarberShopUITestsLaunchTests.swift */; };
+		9B8393762834C88A00460DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8393752834C88A00460DAD /* AppDelegate.swift */; };
+		9B8393782834C88A00460DAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8393772834C88A00460DAD /* SceneDelegate.swift */; };
+		9B83937A2834C88A00460DAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8393792834C88A00460DAD /* ViewController.swift */; };
+		9B83937D2834C88A00460DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83937B2834C88A00460DAD /* Main.storyboard */; };
+		9B83937F2834C88B00460DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B83937E2834C88B00460DAD /* Assets.xcassets */; };
+		9B8393822834C88B00460DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8393802834C88B00460DAD /* LaunchScreen.storyboard */; };
+		9B83938D2834C88B00460DAD /* barbershopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83938C2834C88B00460DAD /* barbershopTests.swift */; };
+		9B8393972834C88B00460DAD /* barbershopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8393962834C88B00460DAD /* barbershopUITests.swift */; };
+		9B8393992834C88B00460DAD /* barbershopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8393982834C88B00460DAD /* barbershopUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9BEDB32E2834B5E000D38D59 /* PBXContainerItemProxy */ = {
+		9B8393892834C88B00460DAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9BEDB30F2834B5DC00D38D59 /* Project object */;
+			containerPortal = 9B83936A2834C88900460DAD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9BEDB3162834B5DC00D38D59;
-			remoteInfo = BarberShop;
+			remoteGlobalIDString = 9B8393712834C88A00460DAD;
+			remoteInfo = barbershop;
 		};
-		9BEDB3382834B5E100D38D59 /* PBXContainerItemProxy */ = {
+		9B8393932834C88B00460DAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9BEDB30F2834B5DC00D38D59 /* Project object */;
+			containerPortal = 9B83936A2834C88900460DAD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9BEDB3162834B5DC00D38D59;
-			remoteInfo = BarberShop;
+			remoteGlobalIDString = 9B8393712834C88A00460DAD;
+			remoteInfo = barbershop;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9BEDB3172834B5DC00D38D59 /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BEDB31A2834B5DC00D38D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9BEDB31C2834B5DC00D38D59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BEDB31E2834B5DC00D38D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9BEDB3212834B5DC00D38D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9BEDB3232834B5E000D38D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9BEDB3262834B5E000D38D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9BEDB3282834B5E000D38D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BEDB32D2834B5E000D38D59 /* BarberShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BEDB3312834B5E000D38D59 /* BarberShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberShopTests.swift; sourceTree = "<group>"; };
-		9BEDB3372834B5E100D38D59 /* BarberShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BEDB33B2834B5E100D38D59 /* BarberShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberShopUITests.swift; sourceTree = "<group>"; };
-		9BEDB33D2834B5E100D38D59 /* BarberShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B8393722834C88A00460DAD /* barbershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barbershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8393752834C88A00460DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B8393772834C88A00460DAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9B8393792834C88A00460DAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B83937C2834C88A00460DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B83937E2834C88B00460DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B8393812834C88B00460DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B8393832834C88B00460DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B8393882834C88B00460DAD /* barbershopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = barbershopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B83938C2834C88B00460DAD /* barbershopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barbershopTests.swift; sourceTree = "<group>"; };
+		9B8393922834C88B00460DAD /* barbershopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = barbershopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8393962834C88B00460DAD /* barbershopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barbershopUITests.swift; sourceTree = "<group>"; };
+		9B8393982834C88B00460DAD /* barbershopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barbershopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9BEDB3142834B5DC00D38D59 /* Frameworks */ = {
+		9B83936F2834C88A00460DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB32A2834B5E000D38D59 /* Frameworks */ = {
+		9B8393852834C88B00460DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB3342834B5E100D38D59 /* Frameworks */ = {
+		9B83938F2834C88B00460DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,137 +76,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9BEDB30E2834B5DC00D38D59 = {
+		9B8393692834C88900460DAD = {
 			isa = PBXGroup;
 			children = (
-				9BEDB3192834B5DC00D38D59 /* BarberShop */,
-				9BEDB3302834B5E000D38D59 /* BarberShopTests */,
-				9BEDB33A2834B5E100D38D59 /* BarberShopUITests */,
-				9BEDB3182834B5DC00D38D59 /* Products */,
+				9B8393742834C88A00460DAD /* barbershop */,
+				9B83938B2834C88B00460DAD /* barbershopTests */,
+				9B8393952834C88B00460DAD /* barbershopUITests */,
+				9B8393732834C88A00460DAD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9BEDB3182834B5DC00D38D59 /* Products */ = {
+		9B8393732834C88A00460DAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BEDB3172834B5DC00D38D59 /* BarberShop.app */,
-				9BEDB32D2834B5E000D38D59 /* BarberShopTests.xctest */,
-				9BEDB3372834B5E100D38D59 /* BarberShopUITests.xctest */,
+				9B8393722834C88A00460DAD /* barbershop.app */,
+				9B8393882834C88B00460DAD /* barbershopTests.xctest */,
+				9B8393922834C88B00460DAD /* barbershopUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9BEDB3192834B5DC00D38D59 /* BarberShop */ = {
+		9B8393742834C88A00460DAD /* barbershop */ = {
 			isa = PBXGroup;
 			children = (
-				9BEDB31A2834B5DC00D38D59 /* AppDelegate.swift */,
-				9BEDB31C2834B5DC00D38D59 /* SceneDelegate.swift */,
-				9BEDB31E2834B5DC00D38D59 /* ViewController.swift */,
-				9BEDB3202834B5DC00D38D59 /* Main.storyboard */,
-				9BEDB3232834B5E000D38D59 /* Assets.xcassets */,
-				9BEDB3252834B5E000D38D59 /* LaunchScreen.storyboard */,
-				9BEDB3282834B5E000D38D59 /* Info.plist */,
+				9B8393752834C88A00460DAD /* AppDelegate.swift */,
+				9B8393772834C88A00460DAD /* SceneDelegate.swift */,
+				9B8393792834C88A00460DAD /* ViewController.swift */,
+				9B83937B2834C88A00460DAD /* Main.storyboard */,
+				9B83937E2834C88B00460DAD /* Assets.xcassets */,
+				9B8393802834C88B00460DAD /* LaunchScreen.storyboard */,
+				9B8393832834C88B00460DAD /* Info.plist */,
 			);
-			path = BarberShop;
+			path = barbershop;
 			sourceTree = "<group>";
 		};
-		9BEDB3302834B5E000D38D59 /* BarberShopTests */ = {
+		9B83938B2834C88B00460DAD /* barbershopTests */ = {
 			isa = PBXGroup;
 			children = (
-				9BEDB3312834B5E000D38D59 /* BarberShopTests.swift */,
+				9B83938C2834C88B00460DAD /* barbershopTests.swift */,
 			);
-			path = BarberShopTests;
+			path = barbershopTests;
 			sourceTree = "<group>";
 		};
-		9BEDB33A2834B5E100D38D59 /* BarberShopUITests */ = {
+		9B8393952834C88B00460DAD /* barbershopUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9BEDB33B2834B5E100D38D59 /* BarberShopUITests.swift */,
-				9BEDB33D2834B5E100D38D59 /* BarberShopUITestsLaunchTests.swift */,
+				9B8393962834C88B00460DAD /* barbershopUITests.swift */,
+				9B8393982834C88B00460DAD /* barbershopUITestsLaunchTests.swift */,
 			);
-			path = BarberShopUITests;
+			path = barbershopUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BEDB3162834B5DC00D38D59 /* BarberShop */ = {
+		9B8393712834C88A00460DAD /* barbershop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BEDB3412834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShop" */;
+			buildConfigurationList = 9B83939C2834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershop" */;
 			buildPhases = (
-				9BEDB3132834B5DC00D38D59 /* Sources */,
-				9BEDB3142834B5DC00D38D59 /* Frameworks */,
-				9BEDB3152834B5DC00D38D59 /* Resources */,
+				9B83936E2834C88A00460DAD /* Sources */,
+				9B83936F2834C88A00460DAD /* Frameworks */,
+				9B8393702834C88A00460DAD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BarberShop;
-			productName = BarberShop;
-			productReference = 9BEDB3172834B5DC00D38D59 /* BarberShop.app */;
+			name = barbershop;
+			productName = barbershop;
+			productReference = 9B8393722834C88A00460DAD /* barbershop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9BEDB32C2834B5E000D38D59 /* BarberShopTests */ = {
+		9B8393872834C88B00460DAD /* barbershopTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BEDB3442834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShopTests" */;
+			buildConfigurationList = 9B83939F2834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershopTests" */;
 			buildPhases = (
-				9BEDB3292834B5E000D38D59 /* Sources */,
-				9BEDB32A2834B5E000D38D59 /* Frameworks */,
-				9BEDB32B2834B5E000D38D59 /* Resources */,
+				9B8393842834C88B00460DAD /* Sources */,
+				9B8393852834C88B00460DAD /* Frameworks */,
+				9B8393862834C88B00460DAD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9BEDB32F2834B5E000D38D59 /* PBXTargetDependency */,
+				9B83938A2834C88B00460DAD /* PBXTargetDependency */,
 			);
-			name = BarberShopTests;
-			productName = BarberShopTests;
-			productReference = 9BEDB32D2834B5E000D38D59 /* BarberShopTests.xctest */;
+			name = barbershopTests;
+			productName = barbershopTests;
+			productReference = 9B8393882834C88B00460DAD /* barbershopTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9BEDB3362834B5E100D38D59 /* BarberShopUITests */ = {
+		9B8393912834C88B00460DAD /* barbershopUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BEDB3472834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShopUITests" */;
+			buildConfigurationList = 9B8393A22834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershopUITests" */;
 			buildPhases = (
-				9BEDB3332834B5E100D38D59 /* Sources */,
-				9BEDB3342834B5E100D38D59 /* Frameworks */,
-				9BEDB3352834B5E100D38D59 /* Resources */,
+				9B83938E2834C88B00460DAD /* Sources */,
+				9B83938F2834C88B00460DAD /* Frameworks */,
+				9B8393902834C88B00460DAD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9BEDB3392834B5E100D38D59 /* PBXTargetDependency */,
+				9B8393942834C88B00460DAD /* PBXTargetDependency */,
 			);
-			name = BarberShopUITests;
-			productName = BarberShopUITests;
-			productReference = 9BEDB3372834B5E100D38D59 /* BarberShopUITests.xctest */;
+			name = barbershopUITests;
+			productName = barbershopUITests;
+			productReference = 9B8393922834C88B00460DAD /* barbershopUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9BEDB30F2834B5DC00D38D59 /* Project object */ = {
+		9B83936A2834C88900460DAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					9BEDB3162834B5DC00D38D59 = {
+					9B8393712834C88A00460DAD = {
 						CreatedOnToolsVersion = 13.4;
 					};
-					9BEDB32C2834B5E000D38D59 = {
+					9B8393872834C88B00460DAD = {
 						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 9BEDB3162834B5DC00D38D59;
+						TestTargetID = 9B8393712834C88A00460DAD;
 					};
-					9BEDB3362834B5E100D38D59 = {
+					9B8393912834C88B00460DAD = {
 						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 9BEDB3162834B5DC00D38D59;
+						TestTargetID = 9B8393712834C88A00460DAD;
 					};
 				};
 			};
-			buildConfigurationList = 9BEDB3122834B5DC00D38D59 /* Build configuration list for PBXProject "BarberShop" */;
+			buildConfigurationList = 9B83936D2834C88900460DAD /* Build configuration list for PBXProject "barbershop" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,37 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 9BEDB30E2834B5DC00D38D59;
-			productRefGroup = 9BEDB3182834B5DC00D38D59 /* Products */;
+			mainGroup = 9B8393692834C88900460DAD;
+			productRefGroup = 9B8393732834C88A00460DAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BEDB3162834B5DC00D38D59 /* BarberShop */,
-				9BEDB32C2834B5E000D38D59 /* BarberShopTests */,
-				9BEDB3362834B5E100D38D59 /* BarberShopUITests */,
+				9B8393712834C88A00460DAD /* barbershop */,
+				9B8393872834C88B00460DAD /* barbershopTests */,
+				9B8393912834C88B00460DAD /* barbershopUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9BEDB3152834B5DC00D38D59 /* Resources */ = {
+		9B8393702834C88A00460DAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BEDB3272834B5E000D38D59 /* LaunchScreen.storyboard in Resources */,
-				9BEDB3242834B5E000D38D59 /* Assets.xcassets in Resources */,
-				9BEDB3222834B5DC00D38D59 /* Main.storyboard in Resources */,
+				9B8393822834C88B00460DAD /* LaunchScreen.storyboard in Resources */,
+				9B83937F2834C88B00460DAD /* Assets.xcassets in Resources */,
+				9B83937D2834C88A00460DAD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB32B2834B5E000D38D59 /* Resources */ = {
+		9B8393862834C88B00460DAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB3352834B5E100D38D59 /* Resources */ = {
+		9B8393902834C88B00460DAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,61 +254,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9BEDB3132834B5DC00D38D59 /* Sources */ = {
+		9B83936E2834C88A00460DAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BEDB31F2834B5DC00D38D59 /* ViewController.swift in Sources */,
-				9BEDB31B2834B5DC00D38D59 /* AppDelegate.swift in Sources */,
-				9BEDB31D2834B5DC00D38D59 /* SceneDelegate.swift in Sources */,
+				9B83937A2834C88A00460DAD /* ViewController.swift in Sources */,
+				9B8393762834C88A00460DAD /* AppDelegate.swift in Sources */,
+				9B8393782834C88A00460DAD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB3292834B5E000D38D59 /* Sources */ = {
+		9B8393842834C88B00460DAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BEDB3322834B5E000D38D59 /* BarberShopTests.swift in Sources */,
+				9B83938D2834C88B00460DAD /* barbershopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BEDB3332834B5E100D38D59 /* Sources */ = {
+		9B83938E2834C88B00460DAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BEDB33E2834B5E100D38D59 /* BarberShopUITestsLaunchTests.swift in Sources */,
-				9BEDB33C2834B5E100D38D59 /* BarberShopUITests.swift in Sources */,
+				9B8393992834C88B00460DAD /* barbershopUITestsLaunchTests.swift in Sources */,
+				9B8393972834C88B00460DAD /* barbershopUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9BEDB32F2834B5E000D38D59 /* PBXTargetDependency */ = {
+		9B83938A2834C88B00460DAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9BEDB3162834B5DC00D38D59 /* BarberShop */;
-			targetProxy = 9BEDB32E2834B5E000D38D59 /* PBXContainerItemProxy */;
+			target = 9B8393712834C88A00460DAD /* barbershop */;
+			targetProxy = 9B8393892834C88B00460DAD /* PBXContainerItemProxy */;
 		};
-		9BEDB3392834B5E100D38D59 /* PBXTargetDependency */ = {
+		9B8393942834C88B00460DAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9BEDB3162834B5DC00D38D59 /* BarberShop */;
-			targetProxy = 9BEDB3382834B5E100D38D59 /* PBXContainerItemProxy */;
+			target = 9B8393712834C88A00460DAD /* barbershop */;
+			targetProxy = 9B8393932834C88B00460DAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9BEDB3202834B5DC00D38D59 /* Main.storyboard */ = {
+		9B83937B2834C88A00460DAD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9BEDB3212834B5DC00D38D59 /* Base */,
+				9B83937C2834C88A00460DAD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9BEDB3252834B5E000D38D59 /* LaunchScreen.storyboard */ = {
+		9B8393802834C88B00460DAD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9BEDB3262834B5E000D38D59 /* Base */,
+				9B8393812834C88B00460DAD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9BEDB33F2834B5E100D38D59 /* Debug */ = {
+		9B83939A2834C88B00460DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		9BEDB3402834B5E100D38D59 /* Release */ = {
+		9B83939B2834C88B00460DAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,7 +430,7 @@
 			};
 			name = Release;
 		};
-		9BEDB3422834B5E100D38D59 /* Debug */ = {
+		9B83939D2834C88B00460DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -438,7 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BarberShop/Info.plist;
+				INFOPLIST_FILE = barbershop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShop;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -457,7 +457,7 @@
 			};
 			name = Debug;
 		};
-		9BEDB3432834B5E100D38D59 /* Release */ = {
+		9B83939E2834C88B00460DAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -465,7 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BarberShop/Info.plist;
+				INFOPLIST_FILE = barbershop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -476,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShop;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -484,7 +484,7 @@
 			};
 			name = Release;
 		};
-		9BEDB3452834B5E100D38D59 /* Debug */ = {
+		9B8393A02834C88B00460DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -494,16 +494,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShopTests;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarberShop.app/BarberShop";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/barbershop.app/barbershop";
 			};
 			name = Debug;
 		};
-		9BEDB3462834B5E100D38D59 /* Release */ = {
+		9B8393A12834C88B00460DAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -513,16 +513,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShopTests;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarberShop.app/BarberShop";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/barbershop.app/barbershop";
 			};
 			name = Release;
 		};
-		9BEDB3482834B5E100D38D59 /* Debug */ = {
+		9B8393A32834C88B00460DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -530,16 +530,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShopUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BarberShop;
+				TEST_TARGET_NAME = barbershop;
 			};
 			name = Debug;
 		};
-		9BEDB3492834B5E100D38D59 /* Release */ = {
+		9B8393A42834C88B00460DAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -547,55 +547,55 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.BarberShopUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BarberShop;
+				TEST_TARGET_NAME = barbershop;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BEDB3122834B5DC00D38D59 /* Build configuration list for PBXProject "BarberShop" */ = {
+		9B83936D2834C88900460DAD /* Build configuration list for PBXProject "barbershop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BEDB33F2834B5E100D38D59 /* Debug */,
-				9BEDB3402834B5E100D38D59 /* Release */,
+				9B83939A2834C88B00460DAD /* Debug */,
+				9B83939B2834C88B00460DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BEDB3412834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShop" */ = {
+		9B83939C2834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BEDB3422834B5E100D38D59 /* Debug */,
-				9BEDB3432834B5E100D38D59 /* Release */,
+				9B83939D2834C88B00460DAD /* Debug */,
+				9B83939E2834C88B00460DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BEDB3442834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShopTests" */ = {
+		9B83939F2834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershopTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BEDB3452834B5E100D38D59 /* Debug */,
-				9BEDB3462834B5E100D38D59 /* Release */,
+				9B8393A02834C88B00460DAD /* Debug */,
+				9B8393A12834C88B00460DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BEDB3472834B5E100D38D59 /* Build configuration list for PBXNativeTarget "BarberShopUITests" */ = {
+		9B8393A22834C88B00460DAD /* Build configuration list for PBXNativeTarget "barbershopUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BEDB3482834B5E100D38D59 /* Debug */,
-				9BEDB3492834B5E100D38D59 /* Release */,
+				9B8393A32834C88B00460DAD /* Debug */,
+				9B8393A42834C88B00460DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9BEDB30F2834B5DC00D38D59 /* Project object */;
+	rootObject = 9B83936A2834C88900460DAD /* Project object */;
 }

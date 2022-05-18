@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  BarberShop
+//  barbershop
 //
 //  Created by Truong Tien on 18/05/2022.
 //

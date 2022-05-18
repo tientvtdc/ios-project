@@ -1,14 +1,14 @@
 //
-//  BarberShopTests.swift
-//  BarberShopTests
+//  barbershopTests.swift
+//  barbershopTests
 //
 //  Created by Truong Tien on 18/05/2022.
 //
 
 import XCTest
-@testable import BarberShop
+@testable import barbershop
 
-class BarberShopTests: XCTestCase {
+class barbershopTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
