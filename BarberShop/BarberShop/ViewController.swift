@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  BarberShop
 //
-//  Created by Truong Tien on 5/16/22.
-//  Copyright © 2022 Group 1. All rights reserved.
+//  Created by Truong Tien on 18/05/2022.
 //
 
 import UIKit
