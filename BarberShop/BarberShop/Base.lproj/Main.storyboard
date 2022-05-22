@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,57 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eVV-G4-sbd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eVV-G4-sbd">
                                 <rect key="frame" x="0.0" y="222" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" id="302-RP-IrH" customClass="MovieTableViewCell" customModule="BarberShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="300" id="302-RP-IrH" customClass="ServiceTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="302-RP-IrH" id="uvk-SP-z4W">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLx-BA-Ni8">
-                                                    <rect key="frame" x="16" y="4" width="382" height="112"/>
+                                                    <rect key="frame" x="16" y="4" width="382" height="292"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-08-mQO">
-                                                            <rect key="frame" x="16" y="16" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="fB0-Wb-q8z"/>
-                                                                <constraint firstAttribute="height" constant="50" id="k6j-Ip-8cJ"/>
-                                                            </constraints>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-08-mQO">
+                                                            <rect key="frame" x="16" y="16" width="366" height="150"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-Uo-hLA">
-                                                            <rect key="frame" x="82" y="16" width="83.5" height="17.5"/>
-                                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
-                                                            <color key="textColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Time and Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36G-kP-IJs">
-                                                            <rect key="frame" x="82" y="41.5" width="123" height="15.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Time and Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36G-kP-IJs">
+                                                            <rect key="frame" x="16" y="206" width="123" height="46"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="13"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qD-Mf-lOp">
-                                                            <rect key="frame" x="16" y="82" width="70" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-Uo-hLA">
+                                                            <rect key="frame" x="16" y="174" width="84" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="g5a-08-mQO" firstAttribute="top" secondItem="mLx-BA-Ni8" secondAttribute="top" constant="16" id="78v-kl-6ut"/>
-                                                        <constraint firstItem="RvT-Uo-hLA" firstAttribute="leading" secondItem="g5a-08-mQO" secondAttribute="trailing" constant="16" id="CID-WS-X5m"/>
-                                                        <constraint firstItem="8qD-Mf-lOp" firstAttribute="leading" secondItem="mLx-BA-Ni8" secondAttribute="leading" constant="16" id="L21-gt-NNr"/>
-                                                        <constraint firstItem="RvT-Uo-hLA" firstAttribute="top" secondItem="mLx-BA-Ni8" secondAttribute="top" constant="16" id="Pur-MB-iJY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="8qD-Mf-lOp" secondAttribute="bottom" constant="16" id="aeK-05-N4v"/>
-                                                        <constraint firstItem="36G-kP-IJs" firstAttribute="leading" secondItem="g5a-08-mQO" secondAttribute="trailing" constant="16" id="gip-nz-L3r"/>
-                                                        <constraint firstItem="g5a-08-mQO" firstAttribute="leading" secondItem="mLx-BA-Ni8" secondAttribute="leading" constant="16" id="kL9-Ek-qDd"/>
-                                                        <constraint firstItem="36G-kP-IJs" firstAttribute="top" secondItem="RvT-Uo-hLA" secondAttribute="bottom" constant="8" id="pYu-0n-fbZ"/>
-                                                        <constraint firstItem="8qD-Mf-lOp" firstAttribute="top" secondItem="g5a-08-mQO" secondAttribute="bottom" constant="16" id="wkT-rE-SaT"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -79,6 +60,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backView" destination="mLx-BA-Ni8" id="cRN-zG-e6A"/>
+                                            <outlet property="name" destination="RvT-Uo-hLA" id="ZcL-cf-VnY"/>
+                                            <outlet property="price" destination="36G-kP-IJs" id="Wwf-wQ-0Ya"/>
                                             <outlet property="profilePicImage" destination="g5a-08-mQO" id="Avv-4r-0sw"/>
                                         </connections>
                                     </tableViewCell>
@@ -117,8 +100,7 @@
                                     <constraint firstItem="GwP-2v-WEW" firstAttribute="top" secondItem="OJw-B8-aAI" secondAttribute="bottom" constant="25" id="jVX-pc-oIZ"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juL-ta-u5f">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view alpha="0.75" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juL-ta-u5f">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -171,6 +153,7 @@
                         <outlet property="hamburgerView" destination="sFN-rm-Qc3" id="kHg-ro-6jG"/>
                         <outlet property="leadingConstraintForHamburgerView" destination="BR0-La-3eu" id="LMk-qh-Mu5"/>
                         <outlet property="mainBackView" destination="dhx-25-rsw" id="P8e-bB-LhG"/>
+                        <outlet property="tableView" destination="eVV-G4-sbd" id="XlM-5z-31m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

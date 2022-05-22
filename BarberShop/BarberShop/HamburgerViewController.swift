@@ -30,5 +30,9 @@ class HamburgerViewController: UIViewController {
     
     @IBAction func clickedOnButton(_ sender: Any) {
         self.delegate?.hideHamburgerMenu()
+        if  let  btn = sender as? UIButton{
+            print(btn.buttonType);
+        }
+        
     }
 }

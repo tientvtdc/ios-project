@@ -4,8 +4,10 @@
 //
 //  Created by Kashyap on 13/11/20.
 //
-import Firebase
+//import Firebase
 import UIKit
+import Firebase;
+import FirebaseStorage;
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HamburgerViewControllerDelegate {
     @IBOutlet weak var mainBackView: UIView!
@@ -13,15 +15,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var leadingConstraintForHamburgerView: NSLayoutConstraint!
     
     @IBOutlet weak var backViewForHamburger: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var storageRef:StorageReference!;
+    var serviceList = [Service]();
+    var ref: DatabaseReference!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.backViewForHamburger.isHidden = true
-//        self.mainBackView.layer.cornerRadius = 40
+        //        self.mainBackView.layer.cornerRadius = 40
         self.mainBackView.clipsToBounds = true
         FirebaseApp.configure();
+        ref = Database.database().reference();
+        storageRef = Storage.storage().reference();
+        
+        let allPlaces = self.ref.child("services")
+        
+        allPlaces.observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let serviceDict = snap.value as! [String: Any]
+                let name = serviceDict["name"] as! String
+                let description = serviceDict["description"] as! String
+                let image = serviceDict["image"] as! String
+                let id = serviceDict["id"] as! String
+                let price = serviceDict["price"] as! Double;
+                self.serviceList += [Service(id: id, name: name, image: image, price: price, description: description, time: 1)];
+                print(name)
+                
+            }
+            self.tableView.reloadData();
+        })
+        
     }
-
+    
     @IBAction func tappedOnHamburgerbackView(_ sender: Any) {
         self.hideHamburgerView()
     }
@@ -61,9 +91,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             } completion: { (status) in
                 self.isHamburgerMenuShown = true
             }
-
+            
         }
-
+        
         self.backViewForHamburger.isHidden = false
         
     }
@@ -81,20 +111,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.serviceList.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MovieTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
+        let cell : ServiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! ServiceTableViewCell
+        let service = self.serviceList[indexPath.row];
         
+        cell.name.text = service.name;
+        cell.price.text = "\(service.price) đ"
         cell.selectionStyle = .none
+        
+        let url = URL(string: service.image)
+        let data = try? Data(contentsOf: url!)
+        
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            cell.profilePicImage.image = image
+        }
+        
         
         cell.backView.layer.cornerRadius = 8
         cell.backView.clipsToBounds = true
         
         cell.profilePicImage.layer.cornerRadius = 25
         cell.profilePicImage.clipsToBounds = true
-        
+        print(service.name)
         return cell
     }
     
@@ -105,7 +147,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (isHamburgerMenuShown)
         {
-             if let touch = touches.first
+            if let touch = touches.first
             {
                 let location = touch.location(in: backViewForHamburger)
                 beginPoint = location.x
