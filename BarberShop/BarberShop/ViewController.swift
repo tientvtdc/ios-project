@@ -6,9 +6,9 @@
 //
 //import Firebase
 import UIKit
-import Firebase;
+import FirebaseCore;
 import FirebaseStorage;
-
+import Firebase;
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HamburgerViewControllerDelegate {
     @IBOutlet weak var mainBackView: UIView!
     @IBOutlet weak var hamburgerView: UIView!
@@ -20,8 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var storageRef:StorageReference!;
     var serviceList = [Service]();
     var ref: DatabaseReference!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,10 +30,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         FirebaseApp.configure();
         ref = Database.database().reference();
         storageRef = Storage.storage().reference();
+        loadMore();
         
-        let allPlaces = self.ref.child("services")
-        
-        allPlaces.observeSingleEvent(of: .value, with: { snapshot in
+    }
+    
+    func loadMore() {
+        var recentPostsQuery:DatabaseQuery;
+        let lastKey  = serviceList.last?.id;
+        if !self.serviceList.isEmpty {
+            recentPostsQuery = (self.ref.child("services")).queryOrderedByKey().queryStarting(afterValue: lastKey).queryLimited(toFirst: 3);
+        }else{
+            recentPostsQuery = (self.ref.child("services")).queryLimited(toFirst: 3);
+        }
+        recentPostsQuery.observeSingleEvent(of: .value, with: { snapshot in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let serviceDict = snap.value as! [String: Any]
@@ -43,15 +51,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let image = serviceDict["image"] as! String
                 let id = serviceDict["id"] as! String
                 let price = serviceDict["price"] as! Double;
-                self.serviceList += [Service(id: id, name: name, image: image, price: price, description: description, time: 1)];
-                print(name)
-                
+                var isContain = false;
+                for service in self.serviceList {
+                    if service.id == id {
+                        isContain = true;
+                        break;
+                    }
+                }
+                if !isContain {
+                    self.serviceList.append(Service(id: id, name: name, image: image, price: price, description: description, time: 1));
+                }
+
             }
+            
             self.tableView.reloadData();
         })
-        
+//        recentPostsQuery.removeAllObservers();
     }
-    
     @IBAction func tappedOnHamburgerbackView(_ sender: Any) {
         self.hideHamburgerView()
     }
@@ -113,7 +129,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.serviceList.count;
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       let offsetY = scrollView.contentOffset.y
+       let contentHeight = scrollView.contentSize.height
+
+       if offsetY > contentHeight - scrollView.frame.size.height {
+        loadMore();
+       }
+   }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ServiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! ServiceTableViewCell
         let service = self.serviceList[indexPath.row];
