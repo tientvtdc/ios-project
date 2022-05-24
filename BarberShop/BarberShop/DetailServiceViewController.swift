@@ -8,14 +8,38 @@
 import UIKit
 
 class DetailServiceViewController: UIViewController {
-
+    var service:Service?
+    @IBOutlet weak var serviceImage: UIImageView!
+   
+    @IBOutlet weak var serviceNameLabel: UILabel!
+    
+    @IBOutlet weak var servicePriceLabel: UILabel!
+    
+    @IBOutlet weak var serviceDecriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let service = service{
+            serviceNameLabel.text = service.name;
+            servicePriceLabel.text = NSNumber(value: service.price) .toVND();
+            serviceDecriptionLabel.text = service.description;
+            let url = URL(string: service.image)
+            let data = try? Data(contentsOf: url!)
+            
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                serviceImage.image = image
+                
+            }
+        }
+      
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func back_button_tap(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

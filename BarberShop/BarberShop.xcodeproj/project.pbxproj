@@ -20,6 +20,9 @@
 		9B2039BF283A24CC000067CC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039BE283A24CC000067CC /* FirebaseStorage */; };
 		9B2039C1283A24CC000067CC /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039C0283A24CC000067CC /* FirebaseFunctions */; };
 		9B2039C3283A24CC000067CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039C2283A24CC000067CC /* FirebaseAuth */; };
+		9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */; };
+		9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E75283D316A00240CC7 /* SWRevealViewController.m */; };
+		9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E78283D361C00240CC7 /* HomeViewController.swift */; };
 		9B279779283A83A700117B74 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B279778283A83A700117B74 /* Service.swift */; };
 		9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27977C283A939C00117B74 /* FirebasePerformance */; };
 		9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */; };
@@ -27,6 +30,7 @@
 		9B2A52F2283BB1350064D82B /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52F1283BB1350064D82B /* FirebaseDatabaseSwift-Beta */; };
 		9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A52F5283BD9840064D82B /* LoginViewController.swift */; };
 		9B35FA6B283CB6FC00F9D077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */; };
+		9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +43,15 @@
 		830DCA51255E9DB2007F0911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberExtension.swift; sourceTree = "<group>"; };
+		9B254E72283D316800240CC7 /* BarberShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BarberShop-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B254E74283D316900240CC7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		9B254E75283D316A00240CC7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		9B254E78283D361C00240CC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B279778283A83A700117B74 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9B2A52F5283BD9840064D82B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,19 +95,41 @@
 		830DCA42255E9DB1007F0911 /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				9B254E66283D0CA500240CC7 /* Controller */,
+				9B254E70283D19BE00240CC7 /* SlideMenu */,
 				9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */,
-				9B279772283A82DC00117B74 /* Models */,
 				830DCA43255E9DB1007F0911 /* AppDelegate.swift */,
-				830DCA47255E9DB1007F0911 /* ViewController.swift */,
-				830DCA49255E9DB1007F0911 /* Main.storyboard */,
-				830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */,
-				830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */,
 				830DCA4C255E9DB2007F0911 /* Assets.xcassets */,
 				830DCA4E255E9DB2007F0911 /* LaunchScreen.storyboard */,
 				830DCA51255E9DB2007F0911 /* Info.plist */,
-				9B2A52F5283BD9840064D82B /* LoginViewController.swift */,
+				9B279772283A82DC00117B74 /* Models */,
+				830DCA49255E9DB1007F0911 /* Main.storyboard */,
+				9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */,
 			);
 			path = BarberShop;
+			sourceTree = "<group>";
+		};
+		9B254E66283D0CA500240CC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */,
+				830DCA47255E9DB1007F0911 /* ViewController.swift */,
+				9B2A52F5283BD9840064D82B /* LoginViewController.swift */,
+				9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */,
+				9B254E78283D361C00240CC7 /* HomeViewController.swift */,
+				830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9B254E70283D19BE00240CC7 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9B254E74283D316900240CC7 /* SWRevealViewController.h */,
+				9B254E75283D316A00240CC7 /* SWRevealViewController.m */,
+				9B254E72283D316800240CC7 /* BarberShop-Bridging-Header.h */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 		9B279772283A82DC00117B74 /* Models */ = {
@@ -158,6 +190,7 @@
 				TargetAttributes = {
 					830DCA3F255E9DB1007F0911 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -202,8 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */,
+				9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */,
 				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
+				9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */,
 				830DCA48255E9DB1007F0911 /* ViewController.swift in Sources */,
+				9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */,
+				9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */,
 				9B279779283A83A700117B74 /* Service.swift in Sources */,
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
@@ -353,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BarberShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -362,6 +400,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BarberShop/SlideMenu/BarberShop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BarberShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -381,6 +422,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.barbershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BarberShop/SlideMenu/BarberShop-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

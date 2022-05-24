@@ -125,6 +125,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.hamburgerViewController?.delegate = self
             }
         }
+        else{
+            if segue.identifier == "ShowServiceDetail" {
+                 let dect = segue.destination as! DetailServiceViewController
+                dect.service = serviceDetail;
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.serviceList.count;
@@ -162,6 +168,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(service.name)
         return cell
     }
+    
+    var serviceDetail:Service?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let i = indexPath.row;
+        serviceDetail = serviceList[i];
+        performSegue(withIdentifier: "ShowServiceDetail", sender: self)
+    }
+    
     
     private var isHamburgerMenuShown:Bool = false
     private var beginPoint:CGFloat = 0.0
