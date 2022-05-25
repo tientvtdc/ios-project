@@ -6,22 +6,50 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class ServiceListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    // MARK: properties
-//    struct ServiceBarberShop {
-//        let name: String
-//        let price: Int
-//        let des: String
-//        let time: Int
-//        let image: UIImage?
-//    }
-    let data: [ServiceBarberShop] = [
-        ServiceBarberShop(id: "1",name: "dich vu 1", price: 12500, des: "Xoa bop", time: 15, image: "none"),
-        ServiceBarberShop(id: "2",name: "dich vu 1", price: 22500, des: "Xoa bop", time: 15, image: "none"),
-        ServiceBarberShop(id: "3",name: "dich vu 1", price: 13800, des: "Xoa bop", time: 15, image: "none")
-    ]
+class ServiceListController: UIViewController {
+    @IBOutlet var tblView: UITableView! {
+        didSet {
+            tblView.dataSource = self
+        }
+    }
     
+    var databaseRef: DatabaseReference?
+    
+    var data = [ServiceBarberShop]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if !isConfig {
+            FirebaseApp.configure()
+            isConfig = true
+        }
+        databaseRef = Database.database().reference().child("services")
+        databaseRef?.observe(.childAdded){ [weak self](snapshot) in
+            let key = snapshot.key
+            guard let value = snapshot.value as? [String : Any] else {return}
+            if let id  = value["id"] as? String,
+                let name  = value["name"] as? String,
+                let image = value["image"] as? String,
+                let des = value["description"] as? String,
+                let price = value["price"] as? Int {
+                let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
+                self?.data.append(sv);
+                if let row = self?.data.count {
+                    let indexPath = IndexPath(row: row-1, section: 0)
+                    self?.tblView.insertRows(at: [indexPath], with: .automatic)
+                }
+            }
+        }
+        tblView.dataSource = self
+        tblView.delegate = self
+    }
+
+}
+
+extension ServiceListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -29,7 +57,14 @@ class ServiceListController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let serviceItem = data[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ServiceTableViewCell {
-//            cell.imgService.image = serviceItem.image
+            let url:URL = URL(string: serviceItem.image)!
+            do {
+                let dulieu:Data = try Data(contentsOf: url)
+                cell.imgService.image = UIImage(data: dulieu)
+            }
+            catch {
+                print("Get image failed")
+            }
             cell.nameService.text = serviceItem.name
             cell.priceService.text = String(serviceItem.price)
         return cell
@@ -49,15 +84,4 @@ class ServiceListController: UIViewController, UITableViewDataSource, UITableVie
             
         }
     }
-
-    
-    @IBOutlet var tblView: UITableView!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tblView.dataSource = self
-        tblView.delegate = self
-    }
-
 }
