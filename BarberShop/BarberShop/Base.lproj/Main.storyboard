@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="ServiceList" id="OZl-uR-tsa" customClass="ServiceListController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QKF-uM-6W3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -125,22 +125,31 @@
                                             <constraint firstAttribute="height" constant="240" id="tUu-pv-DeR"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7y-BW-dZX">
-                                        <rect key="frame" x="100" y="546" width="214" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sk-BE-CNY">
+                                        <rect key="frame" x="100" y="579" width="60" height="38"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Thêm Dịch Vụ">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Xóa">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.051609712700379284" blue="0.045249202142480294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="btnAddNewService:" destination="V9c-5R-P46" eventType="touchUpInside" id="m7h-zd-9sJ"/>
+                                            <action selector="btnDeleteService:" destination="tiG-eH-4Bh" eventType="touchUpInside" id="AQh-EN-2Sc"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-HY-MNA">
+                                        <rect key="frame" x="253.5" y="579" width="60.5" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sửa">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="cID-fI-CPu"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="eFY-B9-9F1" firstAttribute="top" secondItem="fuO-vf-AvM" secondAttribute="bottom" constant="20" id="9Vc-yF-tSf"/>
-                                    <constraint firstItem="H7y-BW-dZX" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="100" id="Crw-Y1-ogM"/>
+                                    <constraint firstItem="3sk-BE-CNY" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="100" id="F1Z-qa-f5p"/>
                                     <constraint firstItem="o2E-G3-7xy" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="50" id="IUo-Zl-NVS"/>
                                     <constraint firstItem="o2E-G3-7xy" firstAttribute="top" secondItem="cID-fI-CPu" secondAttribute="top" constant="50" id="LY0-Ya-ohi"/>
                                     <constraint firstItem="eFY-B9-9F1" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="50" id="R29-96-kcZ"/>
@@ -148,13 +157,14 @@
                                     <constraint firstItem="fuO-vf-AvM" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="50" id="TXG-dh-8jd"/>
                                     <constraint firstItem="w0H-fd-a9s" firstAttribute="top" secondItem="eFY-B9-9F1" secondAttribute="bottom" constant="20" id="UoQ-YS-yjQ"/>
                                     <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="bec-wP-nLt" secondAttribute="trailing" constant="87" id="ZPW-mr-zRQ"/>
-                                    <constraint firstItem="H7y-BW-dZX" firstAttribute="top" secondItem="bec-wP-nLt" secondAttribute="bottom" constant="30" id="cHv-Np-GnE"/>
-                                    <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="H7y-BW-dZX" secondAttribute="trailing" constant="100" id="ddB-WT-kCA"/>
                                     <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="w0H-fd-a9s" secondAttribute="trailing" constant="50" id="drA-Hm-401"/>
                                     <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="fuO-vf-AvM" secondAttribute="trailing" constant="50" id="faa-ch-pkA"/>
                                     <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="o2E-G3-7xy" secondAttribute="trailing" constant="50" id="fgb-Ye-GED"/>
+                                    <constraint firstItem="Ned-HY-MNA" firstAttribute="top" secondItem="bec-wP-nLt" secondAttribute="bottom" constant="63" id="iKx-VP-9kD"/>
+                                    <constraint firstItem="3sk-BE-CNY" firstAttribute="top" secondItem="bec-wP-nLt" secondAttribute="bottom" constant="63" id="iz0-45-jVN"/>
                                     <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="eFY-B9-9F1" secondAttribute="trailing" constant="50" id="jXx-H5-7Dh"/>
                                     <constraint firstItem="bec-wP-nLt" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="87" id="mWA-Md-I76"/>
+                                    <constraint firstItem="cID-fI-CPu" firstAttribute="trailing" secondItem="Ned-HY-MNA" secondAttribute="trailing" constant="100" id="ocG-NU-9je"/>
                                     <constraint firstItem="w0H-fd-a9s" firstAttribute="leading" secondItem="cID-fI-CPu" secondAttribute="leading" constant="50" id="sKb-nq-yjq"/>
                                     <constraint firstItem="fuO-vf-AvM" firstAttribute="top" secondItem="o2E-G3-7xy" secondAttribute="bottom" constant="20" id="ziV-sa-6jf"/>
                                 </constraints>
@@ -181,31 +191,31 @@
             <objects>
                 <viewController id="V9c-5R-P46" customClass="AddServiceViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wT-14-HjN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="👤 Nhập tên dịch vụ" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MWF-HE-ugz">
-                                <rect key="frame" x="50" y="94" width="314" height="34"/>
+                                <rect key="frame" x="50" y="138" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="💰 Nhập giá dịch vụ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-57-un2">
-                                <rect key="frame" x="50" y="148" width="314" height="34"/>
+                                <rect key="frame" x="50" y="192" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="📝 Nhập chi tiết dịch vụ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viz-hs-M0Q">
-                                <rect key="frame" x="50" y="202" width="314" height="34"/>
+                                <rect key="frame" x="50" y="246" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="⏰ Nhập thời gian dịch vụ " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-iT-Ksb">
-                                <rect key="frame" x="50" y="256" width="314" height="34"/>
+                                <rect key="frame" x="50" y="300" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header" translatesAutoresizingMaskIntoConstraints="NO" id="N8q-TE-Ejk">
-                                <rect key="frame" x="87" y="320" width="240" height="240"/>
+                                <rect key="frame" x="87" y="364" width="240" height="240"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="PD4-sq-lAO"/>
@@ -217,14 +227,13 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Ah-Nej">
-                                <rect key="frame" x="100" y="590" width="214" height="38"/>
+                                <rect key="frame" x="100" y="634" width="214" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Thêm Dịch Vụ">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnAddNewService:" destination="V9c-5R-P46" eventType="touchUpInside" id="AVg-g1-ESd"/>
-                                    <segue destination="OZl-uR-tsa" kind="show" id="Wcx-CO-vhb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -621,10 +630,6 @@
             <point key="canvasLocation" x="-1484.057971014493" y="159.375"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Mqk-u6-EEI"/>
-        <segue reference="Wcx-CO-vhb"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bg_header" width="180" height="120"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
@@ -640,6 +645,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

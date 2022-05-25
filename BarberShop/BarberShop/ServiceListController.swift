@@ -43,9 +43,29 @@ class ServiceListController: UIViewController {
                 }
             }
         }
+        // Listen for deleted comments in the Firebase database
+        databaseRef?.observe(.childRemoved, with: { (snapshot) -> Void in
+            let index = self.indexOfMessage(snapshot)
+          self.data.remove(at: index)
+          self.tblView.deleteRows(
+            at: [IndexPath(row: index, section: 0)],
+            with: UITableView.RowAnimation.automatic
+          )
+        })
         tblView.dataSource = self
         tblView.delegate = self
     }
+    
+    func indexOfMessage(_ snapshot: DataSnapshot) -> Int {
+       var index = 0
+       for comment in data {
+           if snapshot.key == comment.id {
+           return index
+         }
+         index += 1
+       }
+       return -1
+     }
 
 }
 
@@ -76,12 +96,19 @@ extension ServiceListController: UITableViewDataSource, UITableViewDelegate {
         if let edit = storyboard?.instantiateViewController(withIdentifier: "EditServiceViewController") as? EditSeriveViewController {
             self.navigationController?.pushViewController(edit, animated: true)
             let serviceItem = data[indexPath.row]
+            edit.idEdit = serviceItem.id
             edit.nameEdit = serviceItem.name
             edit.priceEdit = serviceItem.price
             edit.desEdit = serviceItem.des
             edit.timeEdit = serviceItem.time
-            edit.imgEdit = "none"
-            
+            let url:URL = URL(string: serviceItem.image)!
+            do {
+                let dulieu:Data = try Data(contentsOf: url)
+                edit.imgEdit = UIImage(data: dulieu)
+            }
+            catch {
+                print("Get image failed")
+            }
         }
     }
 }

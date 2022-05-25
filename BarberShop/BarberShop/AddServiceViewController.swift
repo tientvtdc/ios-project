@@ -104,5 +104,6 @@ class AddServiceViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func btnAddNewService(_ sender: Any) {
         uploadService()
+        self.navigationController?.popViewController(animated: true)
     }
 }
