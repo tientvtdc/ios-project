@@ -16,9 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="4ay-9m-gMW">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="98" id="dp7-nZ-8ue" customClass="ServiceTableViewCell" customModule="BarberShop" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="98"/>
+                                <rect key="frame" x="0.0" y="95.5" width="414" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dp7-nZ-8ue" id="gaF-xV-hio">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
@@ -124,6 +129,9 @@
                                             <constraint firstAttribute="width" secondItem="bec-wP-nLt" secondAttribute="height" multiplier="1:1" id="UD0-sT-ejC"/>
                                             <constraint firstAttribute="height" constant="240" id="tUu-pv-DeR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0ww-4e-PqZ" appends="YES" id="JBz-wX-bT4"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sk-BE-CNY">
                                         <rect key="frame" x="100" y="579" width="60" height="38"/>
@@ -143,6 +151,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnUpdateService:" destination="tiG-eH-4Bh" eventType="touchUpInside" id="f31-Yw-NIZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="cID-fI-CPu"/>
@@ -183,6 +194,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGs-Nw-u5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0ww-4e-PqZ">
+                    <connections>
+                        <action selector="imgProcessing:" destination="tiG-eH-4Bh" id="aB5-Vc-r9k"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="219" y="-125"/>
         </scene>

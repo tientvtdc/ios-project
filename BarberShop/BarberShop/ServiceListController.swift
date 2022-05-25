@@ -52,6 +52,23 @@ class ServiceListController: UIViewController {
             with: UITableView.RowAnimation.automatic
           )
         })
+        
+        databaseRef?.observe(.childChanged, with: { (snapshot) -> Void in
+            let index = self.indexOfMessage(snapshot)
+            guard let value = snapshot.value as? [String : Any] else {return}
+            if let id  = value["id"] as? String,
+                let name  = value["name"] as? String,
+                let image = value["image"] as? String,
+                let des = value["description"] as? String,
+                let price = value["price"] as? Int {
+                let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
+                self.data[index] = sv
+                self.tblView.reloadRows(
+                at: [IndexPath(row: index, section: 0)],
+                with: UITableView.RowAnimation.automatic)
+            }
+            
+        })
         tblView.dataSource = self
         tblView.delegate = self
     }

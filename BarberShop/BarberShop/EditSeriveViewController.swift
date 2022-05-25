@@ -9,7 +9,7 @@ import UIKit
 import FirebaseStorage
 import Firebase
 
-class EditSeriveViewController: UIViewController {
+class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var txt_name: UITextField!
     @IBOutlet weak var txt_price: UITextField!
     @IBOutlet weak var txt_des: UITextField!
@@ -18,10 +18,6 @@ class EditSeriveViewController: UIViewController {
     
     var ref: DatabaseReference! = Database.database().reference()
     
-    @IBAction func btnDeleteService(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
-        showAlert()
-    }
     var idSetEdit = ""
     var idEdit = ""
     var nameEdit = ""
@@ -29,6 +25,7 @@ class EditSeriveViewController: UIViewController {
     var desEdit = ""
     var timeEdit = 0
     var imgEdit:UIImage?
+    var selectImage:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +37,90 @@ class EditSeriveViewController: UIViewController {
         idSetEdit = idEdit
     }
     
+    @IBAction func imgProcessing(_ sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+                imagePickerController.sourceType = .photoLibrary
+                imagePickerController.delegate = self
+                present(imagePickerController, animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectImg = info[.originalImage] as? UIImage
+        {
+            selectImage = selectImg
+            img_edit.image = selectImg
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Update Service
+    @IBAction func btnUpdateService(_ sender: Any) {
+        uploadService()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func uploadService() {
+        //Create storage
+        let storageRef = Storage.storage().reference()
+        guard selectImage != nil else {
+            return
+        }
+
+        let imageData = selectImage?.jpegData(compressionQuality: 0.8)
+
+        guard imageData != nil else {
+            return
+        }
+        let strPath = "images/\(UUID().uuidString).jpg"
+        let fileRef = storageRef.child(strPath)
+
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        // Upload that data
+        var urlImage:String = ""
+        let uploadTask = fileRef.putData(imageData!, metadata: metadata) {
+            metadata, error in
+
+            fileRef.downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                let urlString = url.absoluteString
+                urlImage = "\(urlString)"
+                print("Download URL: \(urlString)")
+                UserDefaults.standard.set(urlString, forKey: "url")
+                //Upload Service
+                let idNewService = UUID().uuidString;
+                let priceCV: Int? = Int(self.txt_price.text!)
+                let timeCV: Int? = Int(self.txt_time.text!)
+                let newAddService:ServiceBarberShop = ServiceBarberShop(
+                    id: idNewService,
+                    name: self.txt_name.text!,
+                    price: priceCV!,
+                    des: self.txt_des.text!,
+                    time: timeCV!,
+                    image: urlImage)
+                var ref: DatabaseReference!
+                
+                ref = Database.database().reference()
+                
+                ref.child("services/\(self.idSetEdit)").setValue(["id":self.idSetEdit,
+                                                                       "name":newAddService.name,
+                                                                       "price":priceCV!,
+                                                                       "image":newAddService.image,
+                                                                       "description":newAddService.des])
+            })
+        }
+    }
+    
+    // Delete Service with dialog
+    @IBAction func btnDeleteService(_ sender: Any) {
+        showAlert()
+    }
     func showAlert() {
         let alert = UIAlertController(title: "Admin", message: "Bạn thực sự muốn xóa dịch vụ", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Hủy", style: .cancel, handler: { action in
