@@ -7,7 +7,7 @@
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.1031894861396-gk0ci8bscmq18aittv96uhn667ejekga</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>1031894861396-h88vkvd26837bs5vp2sihdh4fm59fn2q.apps.googleusercontent.com</string>
+	<string>1031894861396-1oq13ggr6b3gk1t33ffngt8lsljvq447.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAtT_jQFhxxl_8Np6Ok-1rnpKn0w26IBM0</string>
 	<key>GCM_SENDER_ID</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1031894861396:ios:cdb91a8e48a184f912cfc1</string>
+	<string>1:1031894861396:ios:d131ce8497938c2912cfc1</string>
 	<key>DATABASE_URL</key>
 	<string>https://barber-shop-group-1-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
