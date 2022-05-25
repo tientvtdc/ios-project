@@ -31,15 +31,17 @@ class DetailServiceViewController: UIViewController {
                 serviceImage.image = image
                 
             }
+            title = service.name;
         }
       
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func back_button_tap(_ sender: UIBarButtonItem) {
+ 
+    @IBAction func back_tap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+     //   self.navigationController?.popToRootViewController(animated: true);
     }
-    
     /*
     // MARK: - Navigation
 
