@@ -90,12 +90,14 @@ class AddServiceViewController: UIViewController, UIImagePickerControllerDelegat
                                                                         time: timeCV!,
                                                                         image: urlImage)
                 var ref: DatabaseReference!
+                
                 ref = Database.database().reference()
-                ref.child("services/\(idNewService)").setValue(["id":newAddService.id,
+                guard let key = ref.child("services").childByAutoId().key else { return }
+                ref.child("services/\(key)").setValue(["id":key,
                                                                        "name":newAddService.name,
                                                                        "price":priceCV!,
                                                                        "image":newAddService.image,
-                                                                       "desciption":newAddService.des])
+                                                                       "description":newAddService.des])
             })
         }
         
