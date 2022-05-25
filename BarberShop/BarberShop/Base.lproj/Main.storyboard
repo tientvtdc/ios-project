@@ -11,9 +11,9 @@
         <!--Danh sách dịch vụ-->
         <scene sceneID="Toy-Vb-uaq">
             <objects>
-                <viewController id="OZl-uR-tsa" customClass="ServiceListController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServiceList" id="OZl-uR-tsa" customClass="ServiceListController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QKF-uM-6W3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -177,31 +177,31 @@
             <objects>
                 <viewController id="V9c-5R-P46" customClass="AddServiceViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wT-14-HjN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="👤 Nhập tên dịch vụ" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MWF-HE-ugz">
-                                <rect key="frame" x="50" y="138" width="314" height="34"/>
+                                <rect key="frame" x="50" y="94" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="💰 Nhập giá dịch vụ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-57-un2">
-                                <rect key="frame" x="50" y="192" width="314" height="34"/>
+                                <rect key="frame" x="50" y="148" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="📝 Nhập chi tiết dịch vụ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viz-hs-M0Q">
-                                <rect key="frame" x="50" y="246" width="314" height="34"/>
+                                <rect key="frame" x="50" y="202" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="⏰ Nhập thời gian dịch vụ " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-iT-Ksb">
-                                <rect key="frame" x="50" y="300" width="314" height="34"/>
+                                <rect key="frame" x="50" y="256" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header" translatesAutoresizingMaskIntoConstraints="NO" id="N8q-TE-Ejk">
-                                <rect key="frame" x="87" y="364" width="240" height="240"/>
+                                <rect key="frame" x="87" y="320" width="240" height="240"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="PD4-sq-lAO"/>
@@ -213,13 +213,14 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Ah-Nej">
-                                <rect key="frame" x="100" y="634" width="214" height="38"/>
+                                <rect key="frame" x="100" y="590" width="214" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Thêm Dịch Vụ">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnAddNewService:" destination="V9c-5R-P46" eventType="touchUpInside" id="AVg-g1-ESd"/>
+                                    <segue destination="OZl-uR-tsa" kind="show" id="Wcx-CO-vhb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,7 +249,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="jxg-00-pAV"/>
                     <connections>
+                        <outlet property="desAddServive" destination="viz-hs-M0Q" id="JvC-pG-LGI"/>
                         <outlet property="imgAddNewService" destination="N8q-TE-Ejk" id="LEK-AN-rHF"/>
+                        <outlet property="nameAddService" destination="MWF-HE-ugz" id="JOg-pK-KHM"/>
+                        <outlet property="priceAddService" destination="gqJ-57-un2" id="dzQ-hh-jOi"/>
+                        <outlet property="timeAddService" destination="hwy-iT-Ksb" id="6ua-07-c9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHw-gA-cHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -612,6 +617,9 @@
             <point key="canvasLocation" x="-1484.057971014493" y="159.375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wcx-CO-vhb"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bg_header" width="180" height="120"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>

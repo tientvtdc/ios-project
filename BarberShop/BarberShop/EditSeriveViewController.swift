@@ -20,14 +20,14 @@ class EditSeriveViewController: UIViewController {
     var priceEdit = 0
     var desEdit = ""
     var timeEdit = 0
-    var imgEdit = UIImage()
+    var imgEdit = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         txt_name.text = nameEdit
         txt_price.text = String(priceEdit)
         txt_des.text = desEdit
         txt_time.text = String(timeEdit)
-        img_edit.image = imgEdit
+//        img_edit.text = imgEdit
     
     }
     

@@ -9,21 +9,19 @@ import UIKit
 
 class ServiceListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: properties
-    struct ServiceBarberShop {
-        let name: String
-        let price: Int
-        let des: String
-        let time: Int
-        let image: UIImage?
-    }
-    
-    
-    
+//    struct ServiceBarberShop {
+//        let name: String
+//        let price: Int
+//        let des: String
+//        let time: Int
+//        let image: UIImage?
+//    }
     let data: [ServiceBarberShop] = [
-        ServiceBarberShop(name: "dich vu 1", price: 12500, des: "Xoa bop", time: 15, image: UIImage(named: "bg_header")),
-        ServiceBarberShop(name: "dich vu 1", price: 22500, des: "Xoa bop", time: 15, image: UIImage(named: "bg_header")),
-        ServiceBarberShop(name: "dich vu 1", price: 13800, des: "Xoa bop", time: 15, image: UIImage(named: "bg_header"))
+        ServiceBarberShop(id: "1",name: "dich vu 1", price: 12500, des: "Xoa bop", time: 15, image: "none"),
+        ServiceBarberShop(id: "2",name: "dich vu 1", price: 22500, des: "Xoa bop", time: 15, image: "none"),
+        ServiceBarberShop(id: "3",name: "dich vu 1", price: 13800, des: "Xoa bop", time: 15, image: "none")
     ]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -31,7 +29,7 @@ class ServiceListController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let serviceItem = data[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ServiceTableViewCell {
-            cell.imgService.image = serviceItem.image
+//            cell.imgService.image = serviceItem.image
             cell.nameService.text = serviceItem.name
             cell.priceService.text = String(serviceItem.price)
         return cell
@@ -47,7 +45,7 @@ class ServiceListController: UIViewController, UITableViewDataSource, UITableVie
             edit.priceEdit = serviceItem.price
             edit.desEdit = serviceItem.des
             edit.timeEdit = serviceItem.time
-            edit.imgEdit = serviceItem.image!
+            edit.imgEdit = "none"
             
         }
     }
