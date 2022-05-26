@@ -27,7 +27,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSlideMenu();
-        FirebaseApp.configure();
         ref = Database.database().reference();
         storageRef = Storage.storage().reference();
         beginBatchFetch();
@@ -62,7 +61,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         let url = URL(string: service.image);
         cell.profilePicImage.sd_setImage(with: url, placeholderImage: UIImage(named: "profile_pic"));
-        
+        cell.timeForService.text = "\(service.time) phút"
         cell.backView.layer.cornerRadius = 15
         cell.backView.clipsToBounds = true
 //        cell.layer.borderWidth = 2;

@@ -37,7 +37,11 @@ class DetailServiceViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
- 
+    @IBAction func orderSerivceTap(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToOrderServiceScreen", sender: self);
+      
+    }
+    
     @IBAction func back_tap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
      //   self.navigationController?.popToRootViewController(animated: true);
@@ -51,5 +55,11 @@ class DetailServiceViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOrderServiceScreen" {
+           if let orderServiceViewController = segue.destination as? OrderServiceViewController{
+            orderServiceViewController.service = service;
+            }
+        }
+    }
 }

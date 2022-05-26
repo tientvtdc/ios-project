@@ -16,7 +16,7 @@ class ServiceTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var price: UILabel!
     
-
+    @IBOutlet weak var timeForService: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profilePicImage: UIImageView!
     override func setSelected(_ selected: Bool, animated: Bool) {
