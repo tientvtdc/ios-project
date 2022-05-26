@@ -39,15 +39,12 @@
 		549FDB06283D9BB900682D89 /* ServiceBarberShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549FDB05283D9BB900682D89 /* ServiceBarberShop.swift */; };
 		54A02E982839E1AC00A739CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54A02E972839E1AC00A739CC /* GoogleService-Info.plist */; };
 		54A21A10283C408500E3A607 /* EditSeriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A21A0F283C408500E3A607 /* EditSeriveViewController.swift */; };
-		54A3794F283B220C00871428 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3794E283B220C00871428 /* ServiceTableViewCell.swift */; };
+		54A3794F283B220C00871428 /* ManageServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3794E283B220C00871428 /* ManageServiceTableViewCell.swift */; };
 		54D5BF8D283A3C810014C70B /* ServiceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5BF8C283A3C800014C70B /* ServiceListController.swift */; };
 		830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA43255E9DB1007F0911 /* AppDelegate.swift */; };
-		830DCA48255E9DB1007F0911 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA47255E9DB1007F0911 /* ViewController.swift */; };
 		830DCA4B255E9DB1007F0911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830DCA49255E9DB1007F0911 /* Main.storyboard */; };
 		830DCA4D255E9DB2007F0911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 830DCA4C255E9DB2007F0911 /* Assets.xcassets */; };
 		830DCA50255E9DB2007F0911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830DCA4E255E9DB2007F0911 /* LaunchScreen.storyboard */; };
-		830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */; };
-		830DCA61255EAABA007F0911 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA5F255EAABA007F0911 /* MovieTableViewCell.swift */; };
 		9B4B01BA2838FC8600B2ED1C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4B01B92838FC8600B2ED1C /* FirebaseDatabase */; };
 		9B4B01BC2838FC9100B2ED1C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4B01BB2838FC9100B2ED1C /* FirebaseFirestore */; };
 		9B4B01BE2838FC9600B2ED1C /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4B01BD2838FC9600B2ED1C /* FirebaseFunctions */; };
@@ -61,17 +58,14 @@
 		549FDB05283D9BB900682D89 /* ServiceBarberShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBarberShop.swift; sourceTree = "<group>"; };
 		54A02E972839E1AC00A739CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54A21A0F283C408500E3A607 /* EditSeriveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSeriveViewController.swift; sourceTree = "<group>"; };
-		54A3794E283B220C00871428 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		54A3794E283B220C00871428 /* ManageServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageServiceTableViewCell.swift; sourceTree = "<group>"; };
 		54D5BF8C283A3C800014C70B /* ServiceListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListController.swift; sourceTree = "<group>"; };
 		830DCA40255E9DB1007F0911 /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830DCA43255E9DB1007F0911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		830DCA47255E9DB1007F0911 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		830DCA4A255E9DB1007F0911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		830DCA4C255E9DB2007F0911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		830DCA4F255E9DB2007F0911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		830DCA51255E9DB2007F0911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
-		830DCA5F255EAABA007F0911 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,16 +135,13 @@
 			children = (
 				54A02E972839E1AC00A739CC /* GoogleService-Info.plist */,
 				830DCA43255E9DB1007F0911 /* AppDelegate.swift */,
-				830DCA47255E9DB1007F0911 /* ViewController.swift */,
 				830DCA49255E9DB1007F0911 /* Main.storyboard */,
-				830DCA5F255EAABA007F0911 /* MovieTableViewCell.swift */,
-				830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */,
 				830DCA4C255E9DB2007F0911 /* Assets.xcassets */,
 				830DCA4E255E9DB2007F0911 /* LaunchScreen.storyboard */,
 				830DCA51255E9DB2007F0911 /* Info.plist */,
 				5489147328392718003F12D8 /* AddServiceViewController.swift */,
 				54D5BF8C283A3C800014C70B /* ServiceListController.swift */,
-				54A3794E283B220C00871428 /* ServiceTableViewCell.swift */,
+				54A3794E283B220C00871428 /* ManageServiceTableViewCell.swift */,
 				54A21A0F283C408500E3A607 /* EditSeriveViewController.swift */,
 				549FDB05283D9BB900682D89 /* ServiceBarberShop.swift */,
 			);
@@ -275,13 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
-				54A3794F283B220C00871428 /* ServiceTableViewCell.swift in Sources */,
+				54A3794F283B220C00871428 /* ManageServiceTableViewCell.swift in Sources */,
 				54D5BF8D283A3C810014C70B /* ServiceListController.swift in Sources */,
 				5489147428392718003F12D8 /* AddServiceViewController.swift in Sources */,
 				54A21A10283C408500E3A607 /* EditSeriveViewController.swift in Sources */,
-				830DCA48255E9DB1007F0911 /* ViewController.swift in Sources */,
-				830DCA61255EAABA007F0911 /* MovieTableViewCell.swift in Sources */,
 				549FDB06283D9BB900682D89 /* ServiceBarberShop.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
 			);

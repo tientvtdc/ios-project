@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ServiceTableViewCell: UITableViewCell {
+class ManageServiceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgService: UIImageView!
     @IBOutlet weak var nameService: UILabel!

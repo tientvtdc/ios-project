@@ -105,7 +105,7 @@ extension ServiceListController: UITableViewDataSource, UITableViewDelegate, UIS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let serviceItem = searchData[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ServiceTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ManageServiceTableViewCell {
             let url:URL = URL(string: serviceItem.image)!
             do {
                 let dulieu:Data = try Data(contentsOf: url)
