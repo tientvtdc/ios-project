@@ -16,9 +16,12 @@ class ServiceListController: UIViewController {
         }
     }
     
+    @IBOutlet weak var mySearchText: UISearchBar!
+    
     var databaseRef: DatabaseReference?
     
     var data = [ServiceBarberShop]()
+    var searchData = [ServiceBarberShop]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class ServiceListController: UIViewController {
             FirebaseApp.configure()
             isConfig = true
         }
+        
         databaseRef = Database.database().reference().child("services")
         databaseRef?.observe(.childAdded){ [weak self](snapshot) in
             let key = snapshot.key
@@ -37,16 +41,19 @@ class ServiceListController: UIViewController {
                 let price = value["price"] as? Int {
                 let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
                 self?.data.append(sv);
+                self?.searchData = self!.data
                 if let row = self?.data.count {
                     let indexPath = IndexPath(row: row-1, section: 0)
                     self?.tblView.insertRows(at: [indexPath], with: .automatic)
                 }
             }
+            
         }
         // Listen for deleted comments in the Firebase database
         databaseRef?.observe(.childRemoved, with: { (snapshot) -> Void in
             let index = self.indexOfMessage(snapshot)
           self.data.remove(at: index)
+          self.searchData = self.data
           self.tblView.deleteRows(
             at: [IndexPath(row: index, section: 0)],
             with: UITableView.RowAnimation.automatic
@@ -63,12 +70,14 @@ class ServiceListController: UIViewController {
                 let price = value["price"] as? Int {
                 let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
                 self.data[index] = sv
+                self.searchData = self.data
                 self.tblView.reloadRows(
                 at: [IndexPath(row: index, section: 0)],
                 with: UITableView.RowAnimation.automatic)
             }
-            
         })
+        
+        mySearchText.delegate = self
         tblView.dataSource = self
         tblView.delegate = self
     }
@@ -86,13 +95,13 @@ class ServiceListController: UIViewController {
 
 }
 
-extension ServiceListController: UITableViewDataSource, UITableViewDelegate {
+extension ServiceListController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return searchData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let serviceItem = data[indexPath.row]
+        let serviceItem = searchData[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ServiceTableViewCell {
             let url:URL = URL(string: serviceItem.image)!
             do {
@@ -127,5 +136,22 @@ extension ServiceListController: UITableViewDataSource, UITableViewDelegate {
                 print("Get image failed")
             }
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchData = []
+        
+        for item in data {
+            if mySearchText.text == "" {
+                searchData = data
+            }
+            else
+            {
+                if item.name.lowercased().contains(mySearchText.text!.lowercased()) {
+                    searchData.append(item)
+                }
+            }
+        }
+        tblView.reloadData()
     }
 }
