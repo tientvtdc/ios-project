@@ -20,8 +20,8 @@ class ServiceListController: UIViewController {
     
     var databaseRef: DatabaseReference?
     
-    var data = [ServiceBarberShop]()
-    var searchData = [ServiceBarberShop]()
+    var data = [Service]()
+    var searchData = [Service]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,10 @@ class ServiceListController: UIViewController {
                 let name  = value["name"] as? String,
                 let image = value["image"] as? String,
                 let des = value["description"] as? String,
-                let price = value["price"] as? Int {
-                let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
+                let price = value["price"] as? Int,
+                let time = value["time"] as? Int{
+                let sv = Service(id: id, name: name, image: image, price: Double(price), description: des, time: time)
+//                sv.create_at = Date(timeIntervalSince1970: create_at);
                 self?.data.append(sv);
                 self?.searchData = self!.data
                 if let row = self?.data.count {
@@ -67,8 +69,9 @@ class ServiceListController: UIViewController {
                 let name  = value["name"] as? String,
                 let image = value["image"] as? String,
                 let des = value["description"] as? String,
-                let price = value["price"] as? Int {
-                let sv = ServiceBarberShop(id: id, name: name, price: price, des: des, time: 10, image: image)
+                let price = value["price"] as? Int,
+                let time = value["time"] as? Int {
+                let sv = Service(id: id, name: name, image: image, price: Double(price), description: des, time: time)
                 self.data[index] = sv
                 self.searchData = self.data
                 self.tblView.reloadRows(
@@ -124,9 +127,11 @@ extension ServiceListController: UITableViewDataSource, UITableViewDelegate, UIS
             let serviceItem = data[indexPath.row]
             edit.idEdit = serviceItem.id
             edit.nameEdit = serviceItem.name
-            edit.priceEdit = serviceItem.price
-            edit.desEdit = serviceItem.des
+            edit.priceEdit = Int(serviceItem.price)
+            edit.desEdit = serviceItem.description
             edit.timeEdit = serviceItem.time
+            edit.imgOld = serviceItem.image
+            edit.createAtOld = serviceItem.create_at
             let url:URL = URL(string: serviceItem.image)!
             do {
                 let dulieu:Data = try Data(contentsOf: url)

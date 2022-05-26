@@ -82,22 +82,21 @@ class AddServiceViewController: UIViewController, UIImagePickerControllerDelegat
                 //Upload Service
                 let idNewService = UUID().uuidString;
                 let priceCV: Int? = Int(self.priceAddService.text!)
-                let timeCV: Int? = Int(self.priceAddService.text!)
-                let newAddService:ServiceBarberShop = ServiceBarberShop(id: idNewService,
-                                                                        name: self.nameAddService.text!,
-                                                                        price: priceCV!,
-                                                                        des: self.desAddServive.text!,
-                                                                        time: timeCV!,
-                                                                        image: urlImage)
+                let timeCV: Int? = Int(self.timeAddService.text!)
+                let newAddService:Service = Service(id: idNewService, name: self.nameAddService.text!, image: urlImage, price: Double(priceCV!), description: self.desAddServive.text!, time: timeCV!)
+                
                 var ref: DatabaseReference!
                 
                 ref = Database.database().reference()
                 guard let key = ref.child("services").childByAutoId().key else { return }
                 ref.child("services/\(key)").setValue(["id":key,
-                                                                       "name":newAddService.name,
-                                                                       "price":priceCV!,
-                                                                       "image":newAddService.image,
-                                                                       "description":newAddService.des])
+                                                    "name":newAddService.name,
+                                                    "price":priceCV!,
+                                                    "image":newAddService.image,
+                                                    "description":newAddService.description,
+                                                      "time":newAddService.time,
+                                                       "create_at":String( newAddService.create_at.timeIntervalSince1970)
+                ])
             })
         }
     }

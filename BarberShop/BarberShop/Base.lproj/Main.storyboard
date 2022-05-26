@@ -22,7 +22,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="98" id="dp7-nZ-8ue" customClass="ServiceTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="98" id="dp7-nZ-8ue" customClass="ServiceTableViewCell" customModule="BarberShop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dp7-nZ-8ue" id="gaF-xV-hio">
@@ -649,14 +649,14 @@
     </scenes>
     <resources>
         <image name="bg_header" width="180" height="120"/>
-        <image name="clock.fill" catalog="system" width="32" height="32"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="hamburgerIcon" width="16" height="16"/>
-        <image name="house.fill" catalog="system" width="32" height="32"/>
-        <image name="location.fill" catalog="system" width="32" height="32"/>
-        <image name="person.fill" catalog="system" width="32" height="32"/>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profile_pic" width="341.33334350585938" height="341.33334350585938"/>
-        <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="32" height="32"/>
+        <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

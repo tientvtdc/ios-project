@@ -26,6 +26,10 @@ class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegat
     var timeEdit = 0
     var imgEdit:UIImage?
     var selectImage:UIImage?
+    var imgOld = ""
+    var imgSetOld = ""
+    var createAtOld:Date?
+    var createAtSetOld:Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,8 @@ class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegat
         txt_time.text = String(timeEdit)
         img_edit.image = imgEdit
         idSetEdit = idEdit
+        imgSetOld = imgOld
+        createAtSetOld = createAtOld
     }
     
     @IBAction func imgProcessing(_ sender: UITapGestureRecognizer) {
@@ -67,6 +73,18 @@ class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegat
         //Create storage
         let storageRef = Storage.storage().reference()
         guard selectImage != nil else {
+            var refs: DatabaseReference!
+            
+            refs = Database.database().reference()
+            
+            refs.child("services/\(self.idSetEdit)").setValue(["id":self.idSetEdit,
+                                                               "name":self.txt_name.text!,
+                                                                   "price":Int(self.txt_price.text!)!,
+                                                                   "image":imgSetOld,
+                                                               "description":self.txt_des.text!,
+                                                               "time":Int(self.txt_time.text!)!,
+                                                               "create_at":String(self.createAtSetOld!.timeIntervalSince1970)
+                                                             ])
             return
         }
 
@@ -97,13 +115,8 @@ class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegat
                 let idNewService = UUID().uuidString;
                 let priceCV: Int? = Int(self.txt_price.text!)
                 let timeCV: Int? = Int(self.txt_time.text!)
-                let newAddService:ServiceBarberShop = ServiceBarberShop(
-                    id: idNewService,
-                    name: self.txt_name.text!,
-                    price: priceCV!,
-                    des: self.txt_des.text!,
-                    time: timeCV!,
-                    image: urlImage)
+                let newAddService:Service = Service(id: idNewService, name: self.txt_name.text!, image: urlImage, price: Double(priceCV!), description: self.txt_des.text!, time: timeCV!)
+                
                 var ref: DatabaseReference!
                 
                 ref = Database.database().reference()
@@ -112,7 +125,10 @@ class EditSeriveViewController: UIViewController, UIImagePickerControllerDelegat
                                                                        "name":newAddService.name,
                                                                        "price":priceCV!,
                                                                        "image":newAddService.image,
-                                                                       "description":newAddService.des])
+                                                                       "description":newAddService.description,
+                                                                  "time":newAddService.time,
+                                                                  "create_at":String(self.createAtSetOld!.timeIntervalSince1970)
+                                                                 ])
             })
         }
     }
