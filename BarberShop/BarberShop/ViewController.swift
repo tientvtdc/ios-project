@@ -8,6 +8,10 @@ import Firebase
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HamburgerViewControllerDelegate {
+    // MARK: TUAN test data
+    let elements = ["Truong Van Tien", "Bui Duy Khanh"]
+    
+    @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var mainBackView: UIView!
     @IBOutlet weak var hamburgerView: UIView!
     @IBOutlet weak var leadingConstraintForHamburgerView: NSLayoutConstraint!
@@ -15,11 +19,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var backViewForHamburger: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // MARK: TUAN
+        userTableView.delegate = self
+        userTableView.dataSource = self
+        
+        
         // Do any additional setup after loading the view.
-        self.backViewForHamburger.isHidden = true
+   
 //        self.mainBackView.layer.cornerRadius = 40
-        self.mainBackView.clipsToBounds = true
+      
         FirebaseApp.configure();
+    }
+    
+    
+    // MARK: TUAN user-management
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return elements.count
+    }
+
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customUserCell") as! CustomUserTableViewCell
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        
+        cell.userName.text = elements[indexPath.row]
+        cell.userImage.image = UIImage(named: elements[indexPath.row])
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.height / 2
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
     @IBAction func tappedOnHamburgerbackView(_ sender: Any) {
@@ -79,23 +111,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.hamburgerViewController?.delegate = self
             }
         }
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MovieTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-        
-        cell.selectionStyle = .none
-        
-        cell.backView.layer.cornerRadius = 8
-        cell.backView.clipsToBounds = true
-        
-        cell.profilePicImage.layer.cornerRadius = 25
-        cell.profilePicImage.clipsToBounds = true
-        
-        return cell
     }
     
     private var isHamburgerMenuShown:Bool = false

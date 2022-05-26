@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Al1-1q-eiw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ill-qM-8TV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v69-fu-NRO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Idy-2k-m0S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hm9-IX-TMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cik-BK-x32">
+                                <rect key="frame" x="174" y="433" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="Al1-1q-eiw" kind="show" id="Jze-oV-W2r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pD7-eA-3F9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="828" y="224"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OPv-aV-D2d">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lu5-w7-qTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Al1-1q-eiw" customClass="ViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ofV-sO-1z8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customUserCell" rowHeight="100" id="Nfz-AB-28C" customClass="CustomUserTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nfz-AB-28C" id="1PS-iX-XPa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-xX-bfB">
+                                            <rect key="frame" x="10" y="5" width="394" height="90"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tien" translatesAutoresizingMaskIntoConstraints="NO" id="scn-A8-tTC">
+                                                    <rect key="frame" x="0.0" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="gEG-qK-37c"/>
+                                                        <constraint firstAttribute="height" constant="80" id="pSQ-l3-QLV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truong Van Tien" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BA-bK-ciu">
+                                                    <rect key="frame" x="88" y="8" width="298" height="74"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="scn-A8-tTC" firstAttribute="centerY" secondItem="Pcu-xX-bfB" secondAttribute="centerY" id="Bs7-eD-52L"/>
+                                                <constraint firstAttribute="bottom" secondItem="2BA-bK-ciu" secondAttribute="bottom" constant="8" id="EqU-ea-1We"/>
+                                                <constraint firstAttribute="trailing" secondItem="2BA-bK-ciu" secondAttribute="trailing" constant="8" id="J74-JS-vLb"/>
+                                                <constraint firstItem="scn-A8-tTC" firstAttribute="leading" secondItem="Pcu-xX-bfB" secondAttribute="leading" id="WtE-rO-Plv"/>
+                                                <constraint firstItem="2BA-bK-ciu" firstAttribute="top" secondItem="Pcu-xX-bfB" secondAttribute="top" constant="8" id="mNz-Ku-xMD"/>
+                                                <constraint firstItem="2BA-bK-ciu" firstAttribute="leading" secondItem="scn-A8-tTC" secondAttribute="trailing" constant="8" id="pmQ-w3-S43"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Pcu-xX-bfB" secondAttribute="bottom" constant="5" id="58G-FT-Czd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pcu-xX-bfB" secondAttribute="trailing" constant="10" id="FPj-NZ-B5V"/>
+                                        <constraint firstItem="Pcu-xX-bfB" firstAttribute="leading" secondItem="1PS-iX-XPa" secondAttribute="leading" constant="10" id="bbW-7b-f89"/>
+                                        <constraint firstItem="Pcu-xX-bfB" firstAttribute="top" secondItem="1PS-iX-XPa" secondAttribute="top" constant="5" id="e0U-4R-PKY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellView" destination="Pcu-xX-bfB" id="Xgl-OH-KOd"/>
+                                    <outlet property="userImage" destination="scn-A8-tTC" id="tsp-tC-dG6"/>
+                                    <outlet property="userName" destination="2BA-bK-ciu" id="lix-aS-sBQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Al1-1q-eiw" id="ZM5-sA-KFQ"/>
+                            <outlet property="delegate" destination="Al1-1q-eiw" id="0Bl-tH-4dE"/>
+                            <outlet property="prefetchDataSource" destination="Al1-1q-eiw" id="4ez-hb-Bbw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yFJ-1O-o7Y"/>
+                    <connections>
+                        <outlet property="userTableView" destination="ofV-sO-1z8" id="sKq-oZ-yH2"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1500.0000000000002" y="223.66071428571428"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -344,6 +442,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Tien" width="960" height="948"/>
         <image name="bg_header" width="180" height="120"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="hamburgerIcon" width="16" height="16"/>
