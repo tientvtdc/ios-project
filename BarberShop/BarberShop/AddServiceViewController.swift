@@ -21,10 +21,6 @@ class AddServiceViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var imgAddNewService: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !isConfig {
-            FirebaseApp.configure()
-            isConfig = true
-        }
         imgAddNewService.layer.cornerRadius = 5
     }
     

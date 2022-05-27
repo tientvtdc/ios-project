@@ -25,10 +25,6 @@ class ServiceListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !isConfig {
-            FirebaseApp.configure()
-            isConfig = true
-        }
         
         databaseRef = Database.database().reference().child("services")
         databaseRef?.observe(.childAdded){ [weak self](snapshot) in

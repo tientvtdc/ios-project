@@ -24,7 +24,6 @@
 		9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E78283D361C00240CC7 /* HomeViewController.swift */; };
 		9B279779283A83A700117B74 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B279778283A83A700117B74 /* Service.swift */; };
 		9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27977C283A939C00117B74 /* FirebasePerformance */; };
-		9B27CDED283DC52D00BFAB20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27CDEC283DC52D00BFAB20 /* ViewController.swift */; };
 		9B27CDF1283DE44B00BFAB20 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */; };
 		9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */; };
 		9B2A52F0283BB12D0064D82B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EF283BB12D0064D82B /* FirebaseDatabase */; };
@@ -33,6 +32,10 @@
 		9B35FA6B283CB6FC00F9D077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */; };
 		9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */; };
 		9B4D857C283E8BB0005AB285 /* VerifyCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */; };
+		9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */; };
+		9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */; };
+		9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB4A284117FB008EB5B0 /* ServiceListController.swift */; };
+		9BACBB50284117FB008EB5B0 /* ManageServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */; };
 		9BF48AE1283F58A500A871D0 /* OrderServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */; };
 		9BF48AE5283F79F200A871D0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF48AE4283F79F200A871D0 /* Order.swift */; };
 /* End PBXBuildFile section */
@@ -52,11 +55,14 @@
 		9B254E75283D316A00240CC7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9B254E78283D361C00240CC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B279778283A83A700117B74 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		9B27CDEC283DC52D00BFAB20 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B2A52F5283BD9840064D82B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
 		9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeLoginViewController.swift; sourceTree = "<group>"; };
+		9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSeriveViewController.swift; sourceTree = "<group>"; };
+		9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServiceViewController.swift; sourceTree = "<group>"; };
+		9BACBB4A284117FB008EB5B0 /* ServiceListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceListController.swift; sourceTree = "<group>"; };
+		9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageServiceTableViewCell.swift; sourceTree = "<group>"; };
 		9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderServiceViewController.swift; sourceTree = "<group>"; };
 		9BF48AE4283F79F200A871D0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,12 +122,15 @@
 		9B254E66283D0CA500240CC7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */,
+				9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */,
+				9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */,
+				9BACBB4A284117FB008EB5B0 /* ServiceListController.swift */,
 				830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */,
 				9B2A52F5283BD9840064D82B /* LoginViewController.swift */,
 				9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */,
 				9B254E78283D361C00240CC7 /* HomeViewController.swift */,
 				9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */,
-				9B27CDEC283DC52D00BFAB20 /* ViewController.swift */,
 				830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */,
 				9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */,
 			);
@@ -255,10 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B27CDED283DC52D00BFAB20 /* ViewController.swift in Sources */,
 				9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */,
+				9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */,
+				9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */,
 				9B4D857C283E8BB0005AB285 /* VerifyCodeLoginViewController.swift in Sources */,
 				9BF48AE1283F58A500A871D0 /* OrderServiceViewController.swift in Sources */,
+				9BACBB50284117FB008EB5B0 /* ManageServiceTableViewCell.swift in Sources */,
 				9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */,
 				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
 				9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */,
@@ -267,6 +278,7 @@
 				9B279779283A83A700117B74 /* Service.swift in Sources */,
 				9BF48AE5283F79F200A871D0 /* Order.swift in Sources */,
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
+				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
