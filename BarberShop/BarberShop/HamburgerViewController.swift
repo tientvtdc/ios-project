@@ -7,22 +7,37 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 protocol HamburgerViewControllerDelegate {
     func hideHamburgerMenu()
 }
 class HamburgerViewController: UIViewController {
 
+    @IBOutlet weak var btnGotoHomeManagement: UIButton!
     var delegate : HamburgerViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupHamburgerUI()
         // Do any additional setup after loading the view.
+        
     }
     
     private func setupHamburgerUI()
     {
-   
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { [self] snapshot in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+            let role = value?["role"] as? Int ?? 0
+            if role != 0 {
+                btnGotoHomeManagement.isHidden = false;
+            }
+        }) { error in
+          print(error.localizedDescription)
+        }
     }
     @IBAction func logout(_ sender: Any) {
         let firebaseAuth = Auth.auth()

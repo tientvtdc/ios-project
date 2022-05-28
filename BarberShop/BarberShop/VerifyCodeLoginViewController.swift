@@ -12,6 +12,7 @@ import Firebase
 class VerifyCodeLoginViewController: UIViewController {
     var phone = "";
     var verificationID = "";
+    var isSuccessLogin = false;
     @IBOutlet weak var textFieldCodeAuth: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,9 @@ print(phone)
               }
               // User is signed in
               // ...
-                self.performSegue(withIdentifier: "goToHomeFromVerifyCode", sender: nil);
+                self.isSuccessLogin = true;
+                self.dismiss(animated: false, completion: nil);
+                
                 if let uid = authResult?.user.uid {
                     var ref: DatabaseReference!
                     ref = Database.database().reference();
@@ -59,8 +62,7 @@ print(phone)
                       let value = snapshot.value as? NSDictionary
    //                   let username = value?["username"] as? String ?? ""
 //                      let user = User(username: username)
-                        print(value);
-                        print(uid);
+                    
                 
                       // ...
                     }) { error in

@@ -7,12 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var edtPhone: UITextField!
     override func viewDidLoad() {
-        super.viewDidLoad()
-       
+        super.viewDidLoad() 
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,7 +20,15 @@ class LoginViewController: UIViewController {
                self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);
            }
     }
-    
+    @IBAction func unwindToLoginVC(_ unwindSegue: UIStoryboardSegue) {
+           if let vcB = unwindSegue.source as? VerifyCodeLoginViewController {
+            if vcB.isSuccessLogin{
+                if Auth.auth().currentUser != nil  {
+                       self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);
+                   }
+            }
+           }
+       }
     @IBAction func clickLogin(_ sender: Any) {
         if edtPhone.text?.count != 10 {
             let alert = UIAlertController(title: "Lỗi", message: "Số điện thoại không hợp lệ", preferredStyle: .alert)
