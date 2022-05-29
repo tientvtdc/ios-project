@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class HomeManagementViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -26,4 +26,27 @@ class HomeManagementViewController: UIViewController {
     }
     */
 
+    @IBAction func goToHomeCustomer(_ sender: Any) {
+        dismiss(animated: false, completion: nil);
+    }
+    @IBAction func logout(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        let alert = UIAlertController(title: "Thông báo ", message: "Bạn muốn đăng xuất ?", preferredStyle: .alert)
+        let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+            do {
+                try firebaseAuth.signOut();
+//                self.performSegue(withIdentifier: "goToLoginFromHomeScreen", sender: nil);
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil);
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
+              
+            }
+        let ationCancel = UIAlertAction(title: "Huỷ", style: .default) { (action) in
+              
+            }
+        alert.addAction(ationOk);
+        alert.addAction(ationCancel);
+        present(alert, animated: true, completion: nil)
+    }
 }

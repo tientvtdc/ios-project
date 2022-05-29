@@ -111,7 +111,7 @@ extension ServiceListController: UITableViewDataSource, UITableViewDelegate, UIS
                 print("Get image failed")
             }
             cell.nameService.text = serviceItem.name
-            cell.priceService.text = String(serviceItem.price)
+            cell.priceService.text = NSNumber(value: serviceItem.price).toVND();
         return cell
         }
         fatalError("can not create the cell");

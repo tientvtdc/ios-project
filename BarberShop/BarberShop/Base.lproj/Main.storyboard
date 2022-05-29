@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTH-f4-fbq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EEi-GZ-ajr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,23 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chào mừng đến Barber Shop" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Tx-IMM">
-                                <rect key="frame" x="10" y="244" width="394" height="30"/>
+                                <rect key="frame" x="10" y="264" width="394" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập số điện thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2o-wJ-082">
-                                <rect key="frame" x="30" y="324" width="374" height="21"/>
+                                <rect key="frame" x="30" y="344" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Số điện thoại" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-pE-g8a">
-                                <rect key="frame" x="50" y="395" width="314" height="47.5"/>
+                                <rect key="frame" x="50" y="415" width="314" height="47.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-re-2yl">
-                                <rect key="frame" x="294" y="542.5" width="70" height="70"/>
+                                <rect key="frame" x="294" y="562.5" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="GNE-Yy-kMZ"/>
                                     <constraint firstAttribute="height" constant="70" id="LWZ-Q1-Cnc"/>
@@ -49,6 +49,13 @@
                                     <action selector="clickLogin:" destination="EEi-GZ-ajr" eventType="touchUpInside" id="Nn4-xL-r3J"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="CPi-pR-u1b">
+                                <rect key="frame" x="172" y="144" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="5Rl-sj-JDc"/>
+                                    <constraint firstAttribute="width" constant="70" id="ehB-Ci-yVJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MrW-e0-TE6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,13 +64,15 @@
                             <constraint firstItem="y2o-wJ-082" firstAttribute="leading" secondItem="MrW-e0-TE6" secondAttribute="leading" constant="30" id="78z-c2-XsV"/>
                             <constraint firstItem="MrW-e0-TE6" firstAttribute="trailing" secondItem="y2o-wJ-082" secondAttribute="trailing" constant="10" id="AeY-HT-ut0"/>
                             <constraint firstItem="MrW-e0-TE6" firstAttribute="trailing" secondItem="sKL-Tx-IMM" secondAttribute="trailing" constant="10" id="CTF-4r-A5K"/>
+                            <constraint firstItem="CPi-pR-u1b" firstAttribute="top" secondItem="MrW-e0-TE6" secondAttribute="top" constant="100" id="KLY-QY-CFE"/>
                             <constraint firstItem="wVJ-pE-g8a" firstAttribute="top" secondItem="y2o-wJ-082" secondAttribute="bottom" constant="50" id="NGC-eB-JRP"/>
                             <constraint firstItem="OZg-re-2yl" firstAttribute="top" secondItem="wVJ-pE-g8a" secondAttribute="bottom" constant="100" id="PaN-ai-QoC"/>
                             <constraint firstItem="y2o-wJ-082" firstAttribute="top" secondItem="sKL-Tx-IMM" secondAttribute="bottom" constant="50" id="g92-qF-hFC"/>
+                            <constraint firstItem="sKL-Tx-IMM" firstAttribute="top" secondItem="CPi-pR-u1b" secondAttribute="bottom" constant="50" id="iil-VH-GJF"/>
                             <constraint firstItem="sKL-Tx-IMM" firstAttribute="leading" secondItem="MrW-e0-TE6" secondAttribute="leading" constant="10" id="lz8-sc-ZwV"/>
+                            <constraint firstItem="CPi-pR-u1b" firstAttribute="centerX" secondItem="vpl-tr-3PW" secondAttribute="centerX" id="nKN-QE-9gK"/>
                             <constraint firstItem="wVJ-pE-g8a" firstAttribute="leading" secondItem="MrW-e0-TE6" secondAttribute="leading" constant="50" id="rOJ-xn-nbG"/>
                             <constraint firstItem="MrW-e0-TE6" firstAttribute="trailing" secondItem="wVJ-pE-g8a" secondAttribute="trailing" constant="50" id="sld-hg-mZK"/>
-                            <constraint firstItem="sKL-Tx-IMM" firstAttribute="top" secondItem="MrW-e0-TE6" secondAttribute="top" constant="200" id="wpu-hg-LRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CWo-fR-Rvk"/>
@@ -76,21 +85,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjc-8K-lKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2810.144927536232" y="100.44642857142857"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="zWO-2o-AND">
-            <objects>
-                <viewController id="3QU-aa-nYg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tm6-Ok-RU4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="IsX-yJ-ixr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Klb-eD-L0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2096" y="122"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="2Dv-Bz-SXA">
@@ -188,16 +182,19 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQg-aC-CQT">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQg-aC-CQT">
                                         <rect key="frame" x="20" y="300.5" width="237" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Fai-4S-2AL"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Địa chỉ" image="location.fill" catalog="system">
+                                        <state key="normal" title="Trang quản lý" image="pencil.slash" catalog="system">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="GsU-n2-JM8" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="YYX-dI-5fy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2U-8t-fAH">
                                         <rect key="frame" x="20" y="419.5" width="237" height="35"/>
@@ -263,10 +260,13 @@
                         <viewLayoutGuide key="safeArea" id="oVT-Gh-e45"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="btnGotoHomeManagement" destination="oQg-aC-CQT" id="3Fb-gL-PbA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofJ-d0-OC2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1994.2028985507247" y="1496.6517857142856"/>
+            <point key="canvasLocation" x="-1572" y="-16"/>
         </scene>
         <!--Detail Service View Controller-->
         <scene sceneID="W09-Vb-9Eq">
@@ -299,10 +299,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X57-wp-9KA">
-                                <rect key="frame" x="132.5" y="638.5" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X57-wp-9KA">
+                                <rect key="frame" x="132" y="696.5" width="150" height="40"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="rw6-D7-tKo"/>
+                                    <constraint firstAttribute="width" constant="150" id="wyP-8s-1XM"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Đặt lịch" image="plus" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -317,11 +320,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9wK-3r-n7s" firstAttribute="top" secondItem="yZQ-rr-vE0" secondAttribute="bottom" constant="10" id="2o6-oI-cgZ"/>
+                            <constraint firstItem="X57-wp-9KA" firstAttribute="top" secondItem="9wK-3r-n7s" secondAttribute="bottom" constant="150" id="9eR-2v-S34"/>
                             <constraint firstItem="Dgz-Xz-rbR" firstAttribute="top" secondItem="DXK-3e-JA0" secondAttribute="top" constant="10" id="9ge-uJ-P86"/>
                             <constraint firstItem="DXK-3e-JA0" firstAttribute="trailing" secondItem="Na0-y7-rFt" secondAttribute="trailing" constant="10" id="El6-3h-4Ps"/>
                             <constraint firstItem="DXK-3e-JA0" firstAttribute="trailing" secondItem="Dgz-Xz-rbR" secondAttribute="trailing" constant="10" id="HT8-an-wdq"/>
                             <constraint firstItem="Dgz-Xz-rbR" firstAttribute="leading" secondItem="DXK-3e-JA0" secondAttribute="leading" constant="10" id="JcT-5l-e6C"/>
                             <constraint firstItem="DXK-3e-JA0" firstAttribute="trailing" secondItem="yZQ-rr-vE0" secondAttribute="trailing" constant="10" id="QeM-dh-Nrr"/>
+                            <constraint firstItem="X57-wp-9KA" firstAttribute="centerX" secondItem="EX6-cU-ksH" secondAttribute="centerX" id="TZ1-ho-ZJa"/>
                             <constraint firstItem="9wK-3r-n7s" firstAttribute="leading" secondItem="DXK-3e-JA0" secondAttribute="leading" constant="10" id="ZU6-3J-5dA"/>
                             <constraint firstItem="yZQ-rr-vE0" firstAttribute="top" secondItem="Na0-y7-rFt" secondAttribute="bottom" constant="10" id="agP-EE-Hvp"/>
                             <constraint firstItem="DXK-3e-JA0" firstAttribute="trailing" secondItem="9wK-3r-n7s" secondAttribute="trailing" constant="10" id="jTv-At-Ggs"/>
@@ -778,11 +783,15 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Danh sách dịch vụ" id="iHb-jJ-NrT">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="zbR-ON-pgJ"/>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="nfu-Bb-i7q">
                             <connections>
                                 <segue destination="a5A-M1-1LK" kind="show" id="yIB-TO-j2f"/>
                             </connections>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="zbR-ON-pgJ" id="cfi-pM-Ljj"/>
+                        </connections>
                     </navigationItem>
                     <connections>
                         <outlet property="mySearchText" destination="bPg-33-FZp" id="evy-BP-wOy"/>
@@ -792,7 +801,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-qB-81F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="IL0-k5-K64"/>
             </objects>
-            <point key="canvasLocation" x="-394" y="-899"/>
+            <point key="canvasLocation" x="515.94202898550725" y="-899.33035714285711"/>
         </scene>
         <!--Edit Serive View Controller-->
         <scene sceneID="RMU-yM-J5q">
@@ -946,7 +955,7 @@ EFRo4budaSBnaWFuA
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="399" y="-1184"/>
+            <point key="canvasLocation" x="1308.6956521739132" y="-1184.5982142857142"/>
         </scene>
         <!--Add Service View Controller-->
         <scene sceneID="mDI-xg-DLX">
@@ -1074,13 +1083,132 @@ EFRo4budaSBnaWFuA
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="398.55072463768118" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="1308.6956521739132" y="-547.09821428571422"/>
+        </scene>
+        <!--Trang Quản Lý-->
+        <scene sceneID="Eje-GF-SwX">
+            <objects>
+                <viewController id="tAm-24-Xlt" customClass="HomeManagementViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b6W-IG-nDb" customClass="Hom">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD4-5j-WpW">
+                                <rect key="frame" x="82" y="448" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="acS-3J-CoA"/>
+                                    <constraint firstAttribute="height" constant="50" id="wCa-m0-pSW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Quản lý dịch vụ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="doc.richtext.fill.ar" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gTH-f4-fbq" kind="show" id="K1s-ld-DVw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-NT-Ota">
+                                <rect key="frame" x="82" y="528" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="YeD-Vc-btw"/>
+                                    <constraint firstAttribute="height" constant="50" id="hCq-cB-r9h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Quản lý tài khoản">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="person.2.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztQ-0R-ZBs">
+                                <rect key="frame" x="82" y="768" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EIx-2I-U5o"/>
+                                    <constraint firstAttribute="width" constant="250" id="kwW-1b-hjG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Đăng xuất" image="tray.and.arrow.up" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="tAm-24-Xlt" eventType="touchUpInside" id="1uD-4G-DCg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-Tm-Yve">
+                                <rect key="frame" x="57" y="118" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1JV-Iw-rsN"/>
+                                    <constraint firstAttribute="height" constant="300" id="rCa-zK-oSZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-Sp-wgm">
+                                <rect key="frame" x="82" y="608" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wf6-YF-fw3"/>
+                                    <constraint firstAttribute="width" constant="250" id="raa-wX-rFe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="  Lịch hẹn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="calendar.badge.clock" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rl-vP-Pb5">
+                                <rect key="frame" x="82" y="688" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HHO-iy-q8n"/>
+                                    <constraint firstAttribute="width" constant="250" id="tIX-mU-IQ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Trang khách hàng">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToHomeCustomer:" destination="tAm-24-Xlt" eventType="touchUpInside" id="bJP-5B-TQJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4eP-Fj-apd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gD4-5j-WpW" firstAttribute="top" secondItem="fKb-Tm-Yve" secondAttribute="bottom" constant="30" id="0td-na-auR"/>
+                            <constraint firstItem="ad6-Sp-wgm" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="4yT-ef-O9f"/>
+                            <constraint firstItem="ztQ-0R-ZBs" firstAttribute="top" secondItem="9Rl-vP-Pb5" secondAttribute="bottom" constant="30" id="D8B-jB-4ao"/>
+                            <constraint firstItem="ad6-Sp-wgm" firstAttribute="top" secondItem="5mo-NT-Ota" secondAttribute="bottom" constant="30" id="Kwm-yk-yws"/>
+                            <constraint firstItem="5mo-NT-Ota" firstAttribute="top" secondItem="gD4-5j-WpW" secondAttribute="bottom" constant="30" id="Log-ZR-evf"/>
+                            <constraint firstItem="9Rl-vP-Pb5" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="Rvw-we-Y6c"/>
+                            <constraint firstItem="fKb-Tm-Yve" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="TMZ-Zs-c3S"/>
+                            <constraint firstItem="9Rl-vP-Pb5" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="YKK-rK-2t3"/>
+                            <constraint firstItem="9Rl-vP-Pb5" firstAttribute="top" secondItem="ad6-Sp-wgm" secondAttribute="bottom" constant="30" id="ayb-PP-a2V"/>
+                            <constraint firstItem="gD4-5j-WpW" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="ch8-8g-yRX"/>
+                            <constraint firstItem="5mo-NT-Ota" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="lZe-oy-u2r"/>
+                            <constraint firstItem="fKb-Tm-Yve" firstAttribute="top" secondItem="4eP-Fj-apd" secondAttribute="top" constant="30" id="lxd-xI-Vjs"/>
+                            <constraint firstItem="ztQ-0R-ZBs" firstAttribute="centerX" secondItem="b6W-IG-nDb" secondAttribute="centerX" id="xiD-PW-XZj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trang Quản Lý" id="6ah-G5-mpU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aq-ix-60V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1263.768115942029" y="-869.19642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zjv-oT-JLI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gTH-f4-fbq" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="X2x-mQ-BkQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TU4-PT-AbQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1092,11 +1220,29 @@ EFRo4budaSBnaWFuA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXh-tq-8LR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1304" y="-899"/>
+            <point key="canvasLocation" x="-394.20289855072468" y="-899.33035714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TN4-nR-FsU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GsU-n2-JM8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZaV-30-gG4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tAm-24-Xlt" kind="relationship" relationship="rootViewController" id="Ski-cJ-ZyF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xa4-3e-T3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2173.913043478261" y="-869.19642857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I8v-xQ-E5m"/>
+        <segue reference="36V-73-Gss"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
@@ -1104,14 +1250,19 @@ EFRo4budaSBnaWFuA
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="bg_header" width="180" height="120"/>
+        <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="doc.richtext.fill.ar" catalog="system" width="115" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="pencil.slash" catalog="system" width="128" height="113"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profile_pic" width="341.33334350585938" height="341.33334350585938"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="tray.and.arrow.up" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

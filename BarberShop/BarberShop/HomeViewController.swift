@@ -31,6 +31,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         storageRef = Storage.storage().reference();
         beginBatchFetch();
         // Do any additional setup after loading the view.
+        
     }
     func setUpSlideMenu()  {
         let  menuBtn = UIBarButtonItem(image: UIImage(named: "hamburgerIcon"),  style: .plain , target: self.revealViewController() , action: #selector(SWRevealViewController.revealToggle(animated:)));
@@ -132,9 +133,10 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     let description = serviceDict["description"] as? String ,
                     let image = serviceDict["image"] as? String,
                     let price = serviceDict["price"] as? Double,
+                    let time = serviceDict["time"] as? Int,
                     let id = serviceDict["id"] as? String {
                     if childSnapshot.key != lastPost?.id {
-                      let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: 1)
+                      let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: time)
                         tempPosts.append(sv);
                     }
                     

@@ -65,49 +65,84 @@ class OrderServiceViewController: UIViewController, UIPickerViewDataSource, UIPi
         nameSevice.text = service.name;
         priceService.text =  NSNumber(value: service.price) .toVND();
         timeForService.text =   "\(service.time) phút";
+    
     }
     
     
     @IBAction func changDate(_ sender: UIDatePicker) {
-        print(sender.date);
+
+        dateOrder = sender.date;
     }
+    
     
     @IBAction func orderServiceTap(_ sender: UIButton) {
         let splitArr = timeChoose?.split(separator: ":");
         
         self.dateOrder = Calendar.current.date(bySettingHour: Int(splitArr![0])!, minute: Int(splitArr![1])!, second: 0, of: self.dateOrder!)!
-        let alert = UIAlertController(title: "Thông báo ", message: "Bạn muốn đặt lịch ?", preferredStyle: .alert)
-        let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
-            self.addOrder();
-            self.dismiss(animated: true, completion: nil);
+        var now  = Date();
+        now.addTimeInterval(60*60);
+        if dateOrder!.timeIntervalSince1970 <= now.timeIntervalSince1970 {
+            let alert = UIAlertController(title: "Thông báo ", message: "Vui lòng đặt lịch trước 1 tiếng ", preferredStyle: .alert)
+            let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+        
+            }
+            alert.addAction(ationOk);
+            present(alert, animated: true, completion: nil)
         }
-        let ationCancel = UIAlertAction(title: "Huỷ", style: .default) { (action) in
-            
+        else{
+            let alert = UIAlertController(title: "Thông báo ", message: "Bạn muốn đặt lịch ?", preferredStyle: .alert)
+            let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+                self.addOrder();
+                
+            }
+            let ationCancel = UIAlertAction(title: "Huỷ", style: .default) { (action) in
+                
+            }
+            alert.addAction(ationOk);
+            alert.addAction(ationCancel);
+            present(alert, animated: true, completion: nil)
         }
-        alert.addAction(ationOk);
-        alert.addAction(ationCancel);
-        present(alert, animated: true, completion: nil)
+ 
         
     }
     func addOrder() {
         var ref: DatabaseReference!
-        
         ref = Database.database().reference()
         guard let key = ref.child("orders").childByAutoId().key else { return }
-        ref.child("orders/\(key)").setValue(["id":key,
-                                             "service":["id":service.id,
-                                                        "name":service.name,
-                                                        "price":service.price,
-                                                        "image":service.image,
-                                                        "description":service.description,
-                                                        "time":service.time,
-                                                        "create_at":String( service.create_at.timeIntervalSince1970)
-                                             ],
-                                             "customer":["id":Auth.auth().currentUser?.uid],
-                                             "timeOrder": dateOrder?.timeIntervalSince1970,
-                                             "timeFinish":"",
-                                             "isFinish":false
-        ])
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { [self] snapshot in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+            let name = value?["name"] as? String ?? ""
+            ref.child("orders/\(key)").setValue(["id":key,
+                                                 "service":["id":self.service.id,
+                                                            "name":self.service.name,
+                                                            "price":self.service.price,
+                                                            "image":self.service.image,
+                                                            "description":self.service.description,
+                                                            "time":self.service.time,
+                                                            "create_at":String( self.service.create_at.timeIntervalSince1970)
+                                                 ],
+                                                 "customer":["id":Auth.auth().currentUser?.uid,
+                                                             "name":name,
+                                                             "phone":Auth.auth().currentUser?.phoneNumber
+                                                 ],
+                                                 "timeOrder": dateOrder?.timeIntervalSince1970,
+                                                 "timeFinish":"",
+                                                 "isFinish":false
+            ]);
+            let alert = UIAlertController(title: "Thông báo ", message: "Đặt lịch thành công", preferredStyle: .alert)
+            let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+                self.dismiss(animated: true, completion: nil);
+            }
+            alert.addAction(ationOk);
+            present(alert, animated: true, completion: nil)
+           
+        }) { error in
+          print(error.localizedDescription)
+        }
+
+  
     }
     /*
      // MARK: - Navigation
