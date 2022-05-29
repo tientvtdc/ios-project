@@ -6,16 +6,13 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 protocol HamburgerViewControllerDelegate {
     func hideHamburgerMenu()
 }
 class HamburgerViewController: UIViewController {
 
     var delegate : HamburgerViewControllerDelegate?
-    
-    @IBOutlet weak var profilePictureImage: UIImageView!
-    @IBOutlet weak var mainBackgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +24,27 @@ class HamburgerViewController: UIViewController {
     {
    
     }
-    
-    @IBAction func clickedOnButton(_ sender: Any) {
-        self.delegate?.hideHamburgerMenu()
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        let alert = UIAlertController(title: "Thông báo ", message: "Bạn muốn đăng xuất ?", preferredStyle: .alert)
+        let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+            do {
+                try firebaseAuth.signOut();
+//                self.performSegue(withIdentifier: "goToLoginFromHomeScreen", sender: nil);
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil);
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
+              
+            }
+        let ationCancel = UIAlertAction(title: "Huỷ", style: .default) { (action) in
+              
+            }
+        alert.addAction(ationOk);
+        alert.addAction(ationCancel);
+        present(alert, animated: true, completion: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }
