@@ -639,6 +639,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickLogin:" destination="EEi-GZ-ajr" eventType="touchUpInside" id="6be-YF-365"/>
+                                    <action selector="verifycodeBtn:" destination="Oqh-Rx-kvb" eventType="touchUpInside" id="9iK-c1-pve"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xác nhận mã" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfx-ZE-SrL">
@@ -687,11 +688,9 @@
                         <outlet property="textFieldCodeAuth" destination="bzR-Ep-B77" id="cnd-w0-jer"/>
                         <segue destination="h8E-ps-tY6" kind="show" identifier="goToHomeFromVerifyCode" id="I8v-xQ-E5m"/>
                         <segue destination="YGZ-Sx-g8g" kind="show" identifier="goToSignup" id="QmU-LO-1df"/>
-                        <segue destination="Ql6-us-UgJ" kind="unwind" unwindAction="unwindToSinUpVC:" id="aAw-HW-hzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVS-Dc-30Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Ql6-us-UgJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2903" y="796"/>
         </scene>
@@ -1851,11 +1850,9 @@ EFRo4budaSBnaWFuA
                     <connections>
                         <outlet property="image" destination="YOK-Uc-dVK" id="Dge-c0-iTq"/>
                         <outlet property="name" destination="d48-Um-bNl" id="Yfa-12-wv7"/>
-                        <segue destination="C0l-6D-5TX" kind="unwind" unwindAction="unwindToSinUpVC:" id="qAa-9H-MEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWT-Wh-gae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="C0l-6D-5TX" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="AfX-Dr-qvI">
                     <connections>
                         <action selector="btnImage:" destination="YGZ-Sx-g8g" id="SsQ-m2-fGG"/>
