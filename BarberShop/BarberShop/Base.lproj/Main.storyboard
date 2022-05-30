@@ -1524,7 +1524,13 @@ EFRo4budaSBnaWFuA
                             <constraint firstItem="eY7-xo-Bf9" firstAttribute="trailing" secondItem="NNA-hC-iKK" secondAttribute="trailing" id="uUM-RB-Mpj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IC5-p3-SGJ"/>
+                    <navigationItem key="navigationItem" id="IC5-p3-SGJ">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="5ac-52-1N7">
+                            <connections>
+                                <action selector="back:" destination="MHa-h1-GOb" id="AWh-qI-lpe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NNA-hC-iKK" id="iGN-xk-R0l"/>
                         <segue destination="Sia-VZ-xad" kind="show" identifier="segueUserDetail" id="ARn-kk-GVg"/>

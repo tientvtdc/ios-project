@@ -81,6 +81,9 @@ class UserTableViewController: UIViewController , UITableViewDelegate, UITableVi
         }
     }
     
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     // MARK: Set event when back to this monitor
     @IBAction func unwindToUserTableViewControlelr(_ unwindSegue: UIStoryboardSegue) {
         self.users.removeAll()
