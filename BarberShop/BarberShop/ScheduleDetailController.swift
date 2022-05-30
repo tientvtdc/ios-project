@@ -59,7 +59,7 @@ class ScheduleDetailController: UIViewController {
     */
     
     func showAlert() {
-        let alert = UIAlertController(title: "Admin", message: "Bạn thực sự muốn xóa dịch vụ", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Barber Shop", message: "Bạn thực sự muốn hủy dịch vụ ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Hủy", style: .cancel, handler: { action in
             print("tapped Cancel")
         }))
