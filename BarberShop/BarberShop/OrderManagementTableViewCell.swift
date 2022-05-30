@@ -9,6 +9,12 @@ import UIKit
 
 class OrderManagementTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgService: UIImageView!
+    @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var nameService: UILabel!
+    @IBOutlet weak var dateOrder: UILabel!
+    @IBOutlet weak var finish: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -35,6 +35,7 @@
 		9B2CD31928425D7C001C49A0 /* HomeManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */; };
 		9B35FA6B283CB6FC00F9D077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */; };
 		9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */; };
+		9B3A177F2844C5C200052D29 /* OrderManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A177E2844C5C200052D29 /* OrderManagementTableViewCell.swift */; };
 		9B4D857C283E8BB0005AB285 /* VerifyCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */; };
 		9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */; };
 		9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */; };
@@ -66,6 +67,7 @@
 		9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagementViewController.swift; sourceTree = "<group>"; };
 		9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
+		9B3A177E2844C5C200052D29 /* OrderManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManagementTableViewCell.swift; sourceTree = "<group>"; };
 		9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeLoginViewController.swift; sourceTree = "<group>"; };
 		9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSeriveViewController.swift; sourceTree = "<group>"; };
 		9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServiceViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */,
 				9B254BD0284360C100C5375F /* PersonProfileViewController.swift */,
 				9B267C582843A2A600B169DD /* OrderListManagementViewController.swift */,
+				9B3A177E2844C5C200052D29 /* OrderManagementTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */,
 				9B279779283A83A700117B74 /* Service.swift in Sources */,
 				9BF48AE5283F79F200A871D0 /* Order.swift in Sources */,
+				9B3A177F2844C5C200052D29 /* OrderManagementTableViewCell.swift in Sources */,
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
 				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,

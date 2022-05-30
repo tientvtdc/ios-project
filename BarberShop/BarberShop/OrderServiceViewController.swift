@@ -127,8 +127,8 @@ class OrderServiceViewController: UIViewController, UIPickerViewDataSource, UIPi
                                                              "name":name,
                                                              "phone":Auth.auth().currentUser?.phoneNumber
                                                  ],
-                                                 "timeOrder": dateOrder?.timeIntervalSince1970,
-                                                 "timeFinish":"",
+                                                 "timeOrder": dateOrder!.timeIntervalSince1970,
+                                                 "timeFinish":dateOrder!.timeIntervalSince1970,
                                                  "finish":0
             ]);
             let alert = UIAlertController(title: "Thông báo ", message: "Đặt lịch thành công", preferredStyle: .alert)

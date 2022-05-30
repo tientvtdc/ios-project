@@ -1297,10 +1297,10 @@ EFRo4budaSBnaWFuA
             </objects>
             <point key="canvasLocation" x="-1263.768115942029" y="-869.19642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Order List Management View Controller-->
         <scene sceneID="D9c-EH-Fpx">
             <objects>
-                <viewController interfaceStyle="light" id="DqM-KS-DqO" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" interfaceStyle="light" id="DqM-KS-DqO" customClass="OrderListManagementViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z11-5F-jVI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1309,7 +1309,7 @@ EFRo4budaSBnaWFuA
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="MaH-DT-97A">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderManagementTableViewCell" rowHeight="100" id="MaH-DT-97A" customClass="OrderManagementTableViewCell" customModule="BarberShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MaH-DT-97A" id="cwF-kt-iJY">
@@ -1317,13 +1317,52 @@ EFRo4budaSBnaWFuA
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oe7-6N-s00">
-                                                    <rect key="frame" x="10" y="-2" width="90" height="104"/>
+                                                    <rect key="frame" x="10" y="8" width="90" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dich vu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT6-Hp-b5w">
+                                                    <rect key="frame" x="108" y="40" width="306" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoan thanh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQs-B2-enE">
+                                                    <rect key="frame" x="269" y="71" width="125" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23:00 30/05/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMu-TY-cHF">
+                                                    <rect key="frame" x="108" y="71" width="122" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="So Dien Thoai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aA-FA-vqa">
+                                                    <rect key="frame" x="108" y="8" width="306" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateOrder" destination="nMu-TY-cHF" id="X1v-4B-5mt"/>
+                                            <outlet property="finish" destination="ZQs-B2-enE" id="Gtj-um-55f"/>
+                                            <outlet property="imgService" destination="oe7-6N-s00" id="Owi-Dl-aEJ"/>
+                                            <outlet property="nameService" destination="ZT6-Hp-b5w" id="tOg-uE-ifz"/>
+                                            <outlet property="phone" destination="7aA-FA-vqa" id="jmJ-2y-eCB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DqM-KS-DqO" id="LZ2-xT-V3U"/>
+                                    <outlet property="delegate" destination="DqM-KS-DqO" id="HTb-Ss-EpR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pif-Oh-TrN"/>
@@ -1336,8 +1375,15 @@ EFRo4budaSBnaWFuA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dbf-Cs-y6z">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="lNj-AE-Fbk"/>
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="8vc-nu-bke">
+                            <connections>
+                                <action selector="back:" destination="DqM-KS-DqO" id="SfA-Zg-09L"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dHw-0f-PlP" id="GSl-Ld-MaB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEk-jW-AJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1382,7 +1428,7 @@ EFRo4budaSBnaWFuA
         <!--Navigation Controller-->
         <scene sceneID="tpg-TN-Nmb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gh3-25-bNv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gh3-25-bNv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VQE-wG-Jsn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" id="M51-om-ge2">

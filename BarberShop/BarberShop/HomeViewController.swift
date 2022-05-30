@@ -122,7 +122,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         if lastPost != nil {
             queryRef = postsRef.queryOrderedByKey().queryEnding(atValue: lastPost!.id).queryLimited(toLast: 2);
         } else {
-            queryRef = postsRef.queryLimited(toLast: 2);
+            queryRef = postsRef.queryOrderedByKey().queryLimited(toLast: 2);
         }
         queryRef.observeSingleEvent(of: .value, with: { snapshot in
             var tempPosts = [Service]()
@@ -136,10 +136,11 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     let time = serviceDict["time"] as? Int,
                     let id = serviceDict["id"] as? String {
                     if childSnapshot.key != lastPost?.id {
-                      let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: time)
-                        tempPosts.append(sv);
+                            let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: time)
+                              tempPosts.append(sv);
+                      
                     }
-                    
+                   
                 }
             }
             
