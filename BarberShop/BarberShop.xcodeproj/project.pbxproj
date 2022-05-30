@@ -27,10 +27,8 @@
 		9B279779283A83A700117B74 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B279778283A83A700117B74 /* Service.swift */; };
 		9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27977C283A939C00117B74 /* FirebasePerformance */; };
 		9B27CDED283DC52D00BFAB20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27CDEC283DC52D00BFAB20 /* ViewController.swift */; };
-		9B27CDF1283DE44B00BFAB20 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */; };
 		9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */; };
 		9B2A52F0283BB12D0064D82B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EF283BB12D0064D82B /* FirebaseDatabase */; };
-		9B2A52F2283BB1350064D82B /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52F1283BB1350064D82B /* FirebaseDatabaseSwift-Beta */; };
 		9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A52F5283BD9840064D82B /* LoginViewController.swift */; };
 		9B35FA6B283CB6FC00F9D077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */; };
 		9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */; };
@@ -70,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B2A52F2283BB1350064D82B /* FirebaseDatabaseSwift-Beta in Frameworks */,
 				9B2039B7283A24CC000067CC /* FirebaseFirestore in Frameworks */,
 				9B2039BB283A24CC000067CC /* FirebaseAppCheck in Frameworks */,
 				9B2039C1283A24CC000067CC /* FirebaseFunctions in Frameworks */,
@@ -78,7 +75,6 @@
 				9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */,
 				9B2039C3283A24CC000067CC /* FirebaseAuth in Frameworks */,
 				9B2A52F0283BB12D0064D82B /* FirebaseDatabase in Frameworks */,
-				9B27CDF1283DE44B00BFAB20 /* SDWebImageSwiftUI in Frameworks */,
 				9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */,
 				9B2039B9283A24CC000067CC /* FirebaseInstallations in Frameworks */,
 			);
@@ -198,8 +194,6 @@
 				9B27977C283A939C00117B74 /* FirebasePerformance */,
 				9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */,
 				9B2A52EF283BB12D0064D82B /* FirebaseDatabase */,
-				9B2A52F1283BB1350064D82B /* FirebaseDatabaseSwift-Beta */,
-				9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */,
 			);
 			productName = HamburgerMenu;
 			productReference = 830DCA40255E9DB1007F0911 /* BarberShop.app */;
@@ -538,11 +532,6 @@
 			package = 9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
 		};
-		9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9B27CDEF283DE44B00BFAB20 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
 		9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -552,11 +541,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
-		};
-		9B2A52F1283BB1350064D82B /* FirebaseDatabaseSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseDatabaseSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

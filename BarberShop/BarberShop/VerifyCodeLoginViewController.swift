@@ -9,7 +9,13 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+struct IdPhone {
+    let id:String
+    let phone:String
+}
+
 class VerifyCodeLoginViewController: UIViewController {
+    
     var phone = "";
     var verificationID = "";
     @IBOutlet weak var textFieldCodeAuth: UITextField!
@@ -56,22 +62,13 @@ print(phone)
                       // Get user value
                         if let value = snapshot.value as? NSDictionary {
                             //goto home
-                            //print("ok go to home")
-                            //self.performSegue(withIdentifier: "goToHomeFromVerifyCode", sender: nil);
-                            //goto signup
-                            if let id_phone = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController {
-                                self.navigationController?.pushViewController(id_phone, animated: true)
-                                id_phone.id = self.verificationID
-                                id_phone.phone = self.phone
-                            }
+                            print("ok go to home")
+                            self.performSegue(withIdentifier: "goToHomeFromVerifyCode", sender: nil);
+                            
                         }
                         else {
                             //goto signup
-                            if let id_phone = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController {
-                                self.navigationController?.pushViewController(id_phone, animated: true)
-                                id_phone.id = self.verificationID
-                                id_phone.phone = self.phone
-                            }
+                            
                         }
                     }) { error in
                       print(error.localizedDescription)
@@ -116,5 +113,17 @@ print(phone)
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //create a new variable that yo;u want to send
+        var newIdPhone = IdPhone(id: verificationID, phone: phone)
+        
+        //create a new variable to store the instance of
+        if let sendIdPhone = segue.destination as? SignupViewController {
+            sendIdPhone.id_phone = newIdPhone
+        }
+    }
 
 }

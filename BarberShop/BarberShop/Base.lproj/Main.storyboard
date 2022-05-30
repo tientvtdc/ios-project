@@ -508,7 +508,7 @@
             <objects>
                 <viewController storyboardIdentifier="SignupViewController" id="7vv-gl-LoX" customClass="SignupViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="poP-bO-7g5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-7t-dJh">
@@ -537,24 +537,6 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-oY-ggu">
-                                <rect key="frame" x="20" y="553" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="ISR-oS-88c"/>
-                                    <constraint firstAttribute="height" constant="70" id="jvS-RQ-fdx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <size key="titleShadowOffset" width="8" height="0.0"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large" renderingMode="original"/>
-                                </state>
-                                <connections>
-                                    <action selector="backLoginSreen:" destination="Oqh-Rx-kvb" eventType="touchUpInside" id="dKS-Os-7db"/>
-                                    <action selector="btnPrev:" destination="7vv-gl-LoX" eventType="touchUpInside" id="0ep-01-MpF"/>
-                                    <action selector="clickLogin:" destination="EEi-GZ-ajr" eventType="touchUpInside" id="ZxN-fh-P3T"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60Q-NL-U2a">
                                 <rect key="frame" x="324" y="553" width="70" height="70"/>
                                 <constraints>
@@ -586,10 +568,9 @@
                             <constraint firstItem="2gB-lS-7zO" firstAttribute="leading" secondItem="zmO-c8-OKs" secondAttribute="leading" constant="20" id="ePC-C0-DEf"/>
                             <constraint firstItem="zmO-c8-OKs" firstAttribute="trailing" secondItem="k2V-7t-dJh" secondAttribute="trailing" constant="87" id="sb2-E9-Fe3"/>
                             <constraint firstItem="zmO-c8-OKs" firstAttribute="trailing" secondItem="2gB-lS-7zO" secondAttribute="trailing" constant="20" id="soI-rm-o2g"/>
-                            <constraint firstItem="HcP-oY-ggu" firstAttribute="top" secondItem="2gB-lS-7zO" secondAttribute="bottom" constant="40" id="xbI-Az-Bd0"/>
-                            <constraint firstItem="HcP-oY-ggu" firstAttribute="leading" secondItem="zmO-c8-OKs" secondAttribute="leading" constant="20" id="xyc-Yb-vNE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hy6-id-Kez"/>
                     <connections>
                         <outlet property="image" destination="k2V-7t-dJh" id="vV0-WG-NFJ"/>
                         <outlet property="name" destination="U5R-8K-WxF" id="iBs-YG-BhA"/>
@@ -602,7 +583,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3760.8695652173915" y="795.53571428571422"/>
+            <point key="canvasLocation" x="-2904" y="1497"/>
         </scene>
         <!--Verify Code Login View Controller-->
         <scene sceneID="Nio-WV-3V7">
@@ -639,6 +620,7 @@
                                 <connections>
                                     <action selector="clickLogin:" destination="EEi-GZ-ajr" eventType="touchUpInside" id="6be-YF-365"/>
                                     <action selector="verifycodeBtn:" destination="Oqh-Rx-kvb" eventType="touchUpInside" id="9iK-c1-pve"/>
+                                    <segue destination="7vv-gl-LoX" kind="show" id="iAN-Yv-sUb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xác nhận mã" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfx-ZE-SrL">
@@ -816,7 +798,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="36V-73-Gss"/>
+        <segue reference="I8v-xQ-E5m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>

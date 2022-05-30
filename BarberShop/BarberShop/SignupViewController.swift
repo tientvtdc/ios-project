@@ -9,18 +9,16 @@ import UIKit
 import FirebaseStorage
 import Firebase
 
+
 class SignupViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var id = ""
-    var phone = ""
+    var id_phone: IdPhone?
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UITextField!
     var selectImage:UIImage?
     
     //btn
-    @IBAction func btnPrev(_ sender: Any) {
-    }
     @IBAction func btnOk(_ sender: Any) {
     }
     @IBAction func btnImage(_ sender: UITapGestureRecognizer) {
@@ -50,6 +48,8 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print("id phone is: \(String(describing: id_phone))")
     }
     
     func upLooadUser() {
@@ -71,7 +71,7 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
         let uploadTask = fileRef.putData(imageData!, metadata: metadata) {
             metadata, error in
             
-            fileRef.downloadURL(completion: { url, error in
+            fileRef.downloadURL(completion: { [self] url, error in
                 guard let url = url, error == nil else {
                     return
                 }
@@ -79,13 +79,13 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
                 UserDefaults.standard.set(urlString, forKey: "url")
                 //Upload User
                 
-                let user = User(id: self.id, name: self.name.text!, phone: self.phone, image: urlString, role: 0)
+                let user = User(id: self.id_phone!.id, name: self.name.text!, phone: id_phone!.phone, image: urlString, role: 0)
                 
                 var ref: DatabaseReference!
                 
                 ref = Database.database().reference()
-                guard let key = ref.child("services").childByAutoId().key else { return }
-                ref.child("services/\(key)").setValue(["id": user.id,
+                guard let key = ref.child("users").childByAutoId().key else { return }
+                ref.child("users/\(key)").setValue(["id": user.id,
                                                        "name": user.name,
                                                        "phone": user.phone,
                                                        "image": user.image,
