@@ -57,7 +57,7 @@ class UserTableViewController: UIViewController , UITableViewDelegate, UITableVi
         let user = self.users[indexPath.row]
         self.userData = self.users[indexPath.row]
         cell.userName.text = user.name;
-        let url = URL(string: user.image);
+        let url = URL(string: user.image!);
         cell.userImage.sd_setImage(with: url, placeholderImage: UIImage(named: "profile_pic"));
         cell.userImage.layer.cornerRadius = cell.userImage.frame.height / 2
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2

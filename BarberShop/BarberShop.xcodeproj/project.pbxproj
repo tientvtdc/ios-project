@@ -36,6 +36,10 @@
 		9B35FA6B283CB6FC00F9D077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */; };
 		9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */; };
 		9B3A177F2844C5C200052D29 /* OrderManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A177E2844C5C200052D29 /* OrderManagementTableViewCell.swift */; };
+		9B3A1787284501C200052D29 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A1784284501C100052D29 /* UserTableViewController.swift */; };
+		9B3A1788284501C200052D29 /* CustomUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A1785284501C200052D29 /* CustomUserTableViewCell.swift */; };
+		9B3A1789284501C200052D29 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A1786284501C200052D29 /* UserDetailViewController.swift */; };
+		9B3A178D284502D600052D29 /* iOSDropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3A178C284502D600052D29 /* iOSDropDown */; };
 		9B4D857C283E8BB0005AB285 /* VerifyCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */; };
 		9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */; };
 		9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */; };
@@ -68,6 +72,9 @@
 		9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
 		9B3A177E2844C5C200052D29 /* OrderManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManagementTableViewCell.swift; sourceTree = "<group>"; };
+		9B3A1784284501C100052D29 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		9B3A1785284501C200052D29 /* CustomUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserTableViewCell.swift; sourceTree = "<group>"; };
+		9B3A1786284501C200052D29 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeLoginViewController.swift; sourceTree = "<group>"; };
 		9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSeriveViewController.swift; sourceTree = "<group>"; };
 		9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServiceViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +92,7 @@
 				9B2A52F2283BB1350064D82B /* FirebaseDatabaseSwift-Beta in Frameworks */,
 				9B2039B7283A24CC000067CC /* FirebaseFirestore in Frameworks */,
 				9B2039BB283A24CC000067CC /* FirebaseAppCheck in Frameworks */,
+				9B3A178D284502D600052D29 /* iOSDropDown in Frameworks */,
 				9B2039C1283A24CC000067CC /* FirebaseFunctions in Frameworks */,
 				9B2039BF283A24CC000067CC /* FirebaseStorage in Frameworks */,
 				9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */,
@@ -132,6 +140,9 @@
 		9B254E66283D0CA500240CC7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9B3A1785284501C200052D29 /* CustomUserTableViewCell.swift */,
+				9B3A1786284501C200052D29 /* UserDetailViewController.swift */,
+				9B3A1784284501C100052D29 /* UserTableViewController.swift */,
 				9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */,
 				9BACBB48284117FA008EB5B0 /* EditSeriveViewController.swift */,
 				9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */,
@@ -218,6 +229,7 @@
 				9B2A52EF283BB12D0064D82B /* FirebaseDatabase */,
 				9B2A52F1283BB1350064D82B /* FirebaseDatabaseSwift-Beta */,
 				9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */,
+				9B3A178C284502D600052D29 /* iOSDropDown */,
 			);
 			productName = HamburgerMenu;
 			productReference = 830DCA40255E9DB1007F0911 /* BarberShop.app */;
@@ -250,6 +262,7 @@
 			packageReferences = (
 				9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9B27CDEF283DE44B00BFAB20 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				9B3A178B284502D500052D29 /* XCRemoteSwiftPackageReference "iOSDropDown" */,
 			);
 			productRefGroup = 830DCA41255E9DB1007F0911 /* Products */;
 			projectDirPath = "";
@@ -281,12 +294,14 @@
 			files = (
 				9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */,
 				9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */,
+				9B3A1789284501C200052D29 /* UserDetailViewController.swift in Sources */,
 				9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */,
 				9B4D857C283E8BB0005AB285 /* VerifyCodeLoginViewController.swift in Sources */,
 				9BF48AE1283F58A500A871D0 /* OrderServiceViewController.swift in Sources */,
 				9B2CD31928425D7C001C49A0 /* HomeManagementViewController.swift in Sources */,
 				9BACBB50284117FB008EB5B0 /* ManageServiceTableViewCell.swift in Sources */,
 				9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */,
+				9B3A1787284501C200052D29 /* UserTableViewController.swift in Sources */,
 				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
 				9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */,
 				9B267C592843A2A600B169DD /* OrderListManagementViewController.swift in Sources */,
@@ -299,6 +314,7 @@
 				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
 				9B254BD1284360C100C5375F /* PersonProfileViewController.swift in Sources */,
+				9B3A1788284501C200052D29 /* CustomUserTableViewCell.swift in Sources */,
 				9B254BD4284376B700C5375F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +540,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		9B3A178B284502D500052D29 /* XCRemoteSwiftPackageReference "iOSDropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jriosdev/iOSDropDown.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -581,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B2039B5283A24CC000067CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseDatabaseSwift-Beta";
+		};
+		9B3A178C284502D600052D29 /* iOSDropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3A178B284502D500052D29 /* XCRemoteSwiftPackageReference "iOSDropDown" */;
+			productName = iOSDropDown;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

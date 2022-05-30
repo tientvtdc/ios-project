@@ -30,7 +30,7 @@ class UserDetailViewController: UIViewController {
             role = 0
         }
         else{
-            role = user!.role
+            role = user!.role!
         }
         
         ref = Database.database().reference();
@@ -47,7 +47,7 @@ class UserDetailViewController: UIViewController {
             userDetailName.text = userReceive.name
             userDetailTel.text = userReceive.phone
             userDetailRole.text = userReceive.role == 1 ? "Admin" : "User"
-            let url = URL(string: userReceive.image)
+            let url = URL(string: userReceive.image!)
             userDetailImg.sd_setImage(with: url, placeholderImage: UIImage(named: "profile_pic"));
         }
         userDetailImg.layer.cornerRadius = userDetailImg.frame.height / 2

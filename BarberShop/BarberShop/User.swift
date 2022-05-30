@@ -12,6 +12,7 @@ class User {
     var phone:String?
     var image:String?
     var id:String?
+    var role:Int?
     
     init(id:String, name:String, phone:String, image:String) {
         self.id = id;
@@ -19,5 +20,11 @@ class User {
         self.phone = phone;
         self.image = image;
     }
-    
+    init(dictionary: [String: Any]) {
+            self.id = dictionary["id"] as? String ?? ""
+            self.name = dictionary["name"] as? String ?? ""
+            self.phone = dictionary["phone"] as? String ?? ""
+            self.image = dictionary["image"] as? String ?? ""
+            self.role = Int((dictionary["role"] as? Int)!)
+        }
 }
