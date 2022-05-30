@@ -130,9 +130,9 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
         var queryRef:DatabaseQuery
         let lastPost = orderList.last;
         if lastPost != nil {
-            queryRef = postsRef.queryOrderedByKey().queryEnding(atValue: lastPost!.id).queryLimited(toLast: 3);
+            queryRef = postsRef.queryOrderedByKey().queryEnding(atValue: lastPost!.id).queryLimited(toLast: 9);
         } else {
-            queryRef = postsRef.queryOrderedByKey().queryLimited(toLast: 3);
+            queryRef = postsRef.queryLimited(toLast:  9);
         }
         queryRef.observeSingleEvent(of: .value, with: { snapshot in
             var tempPosts = [Order]()
@@ -172,8 +172,8 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
                     
                 }
             }
-            
-            return completion(tempPosts)
+        
+            return completion(tempPosts.reversed())
         })
     }
 }

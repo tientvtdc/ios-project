@@ -32,7 +32,6 @@ class HamburgerViewController: UIViewController {
           // Get user value
           let value = snapshot.value as? NSDictionary
             let role = value?["role"] as? Int ;
-            print(value)
             if role != 0 {
                 btnGotoHomeManagement.isHidden = false;
             }
