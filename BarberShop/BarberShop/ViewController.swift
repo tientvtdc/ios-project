@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var backViewForHamburger: UIView!
     @IBOutlet weak var tableView: UITableView!
+    // MARK: User table view connection
+    @IBOutlet weak var userTableView: UITableView!
     
     var storageRef:StorageReference!;
     var serviceList = [Service]();
@@ -23,6 +25,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set user table view
+        userTableView.dataSource = self
+        userTableView.delegate = self
+        
         // Do any additional setup after loading the view.
         self.backViewForHamburger.isHidden = true
         //        self.mainBackView.layer.cornerRadius = 40
