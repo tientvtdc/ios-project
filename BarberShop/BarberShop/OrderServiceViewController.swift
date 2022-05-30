@@ -129,7 +129,7 @@ class OrderServiceViewController: UIViewController, UIPickerViewDataSource, UIPi
                                                  ],
                                                  "timeOrder": dateOrder?.timeIntervalSince1970,
                                                  "timeFinish":"",
-                                                 "isFinish":false
+                                                 "finish":0
             ]);
             let alert = UIAlertController(title: "Thông báo ", message: "Đặt lịch thành công", preferredStyle: .alert)
             let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in

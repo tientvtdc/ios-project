@@ -19,9 +19,12 @@
 		9B2039BF283A24CC000067CC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039BE283A24CC000067CC /* FirebaseStorage */; };
 		9B2039C1283A24CC000067CC /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039C0283A24CC000067CC /* FirebaseFunctions */; };
 		9B2039C3283A24CC000067CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2039C2283A24CC000067CC /* FirebaseAuth */; };
+		9B254BD1284360C100C5375F /* PersonProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254BD0284360C100C5375F /* PersonProfileViewController.swift */; };
+		9B254BD4284376B700C5375F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254BD3284376B700C5375F /* User.swift */; };
 		9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */; };
 		9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E75283D316A00240CC7 /* SWRevealViewController.m */; };
 		9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E78283D361C00240CC7 /* HomeViewController.swift */; };
+		9B267C592843A2A600B169DD /* OrderListManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B267C582843A2A600B169DD /* OrderListManagementViewController.swift */; };
 		9B279779283A83A700117B74 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B279778283A83A700117B74 /* Service.swift */; };
 		9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27977C283A939C00117B74 /* FirebasePerformance */; };
 		9B27CDF1283DE44B00BFAB20 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */; };
@@ -50,11 +53,14 @@
 		830DCA51255E9DB2007F0911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		830DCA5A255E9EF2007F0911 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		9B254BD0284360C100C5375F /* PersonProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonProfileViewController.swift; sourceTree = "<group>"; };
+		9B254BD3284376B700C5375F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberExtension.swift; sourceTree = "<group>"; };
 		9B254E72283D316800240CC7 /* BarberShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BarberShop-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B254E74283D316900240CC7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		9B254E75283D316A00240CC7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9B254E78283D361C00240CC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B267C582843A2A600B169DD /* OrderListManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListManagementViewController.swift; sourceTree = "<group>"; };
 		9B279778283A83A700117B74 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9B2A52F5283BD9840064D82B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagementViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 				830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */,
 				9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */,
 				9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */,
+				9B254BD0284360C100C5375F /* PersonProfileViewController.swift */,
+				9B267C582843A2A600B169DD /* OrderListManagementViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */,
 				9B279778283A83A700117B74 /* Service.swift */,
 				9BF48AE4283F79F200A871D0 /* Order.swift */,
+				9B254BD3284376B700C5375F /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 				9B254E6D283D10B600240CC7 /* NSNumberExtension.swift in Sources */,
 				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
 				9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */,
+				9B267C592843A2A600B169DD /* OrderListManagementViewController.swift in Sources */,
 				9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */,
 				9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */,
 				9B279779283A83A700117B74 /* Service.swift in Sources */,
@@ -284,6 +294,8 @@
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
 				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
+				9B254BD1284360C100C5375F /* PersonProfileViewController.swift in Sources */,
+				9B254BD4284376B700C5375F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

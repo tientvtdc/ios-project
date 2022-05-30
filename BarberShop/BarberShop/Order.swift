@@ -13,13 +13,13 @@ class Order {
     var customer:String?
     var timeOrder: Date?
     var timeFinish: Date?
-    var isFinish:Bool?
+    var finish:Int?
     
-    init(id:String, service:Service, timeOrder:Date , timeFinish:Date, isFinish:Bool) {
+    init(id:String, service:Service, timeOrder:Date , timeFinish:Date, finish:Int) {
         self.id  = id ;
         self.service = service;
         self.timeOrder = timeOrder;
         self.timeFinish = timeFinish;
-        self.isFinish = isFinish;
+        self.finish = finish;
     }
 }

@@ -59,7 +59,7 @@ print(phone)
                     ref = Database.database().reference();
                     ref.child("user").child(uid).observeSingleEvent(of: .value, with: { snapshot in
                       // Get user value
-                      let value = snapshot.value as? NSDictionary
+                 //     let value = snapshot.value as? NSDictionary
    //                   let username = value?["username"] as? String ?? ""
 //                      let user = User(username: username)
                     
