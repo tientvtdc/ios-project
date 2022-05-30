@@ -4,11 +4,11 @@
 //
 //  Created by Thanh Tuan Hang on 5/27/22.
 //
-
 import UIKit
 import FirebaseStorage;
 import FirebaseDatabase
 import Firebase;
+import FirebaseAuth
 import iOSDropDown
 
 class UserDetailViewController: UIViewController {
@@ -23,10 +23,10 @@ class UserDetailViewController: UIViewController {
     // MARK: Set button save event listener
     @IBAction func btnSaveUser(_ sender: Any) {
         var role = 0
-        if userDetailRole.text == "Admin"{
+        if userDetailRole.text == "Người Quản Lý"{
             role = 1
         }
-        else if userDetailRole.text == "User"{
+        else if userDetailRole.text == "Người Dùng"{
             role = 0
         }
         else{
@@ -34,23 +34,43 @@ class UserDetailViewController: UIViewController {
         }
         
         ref = Database.database().reference();
-        ref?.child("users/\(user!.id)/role").setValue(role)
+        let id = user!.id!;
+        ref?.child("users/\(id)/role").setValue(role)
         self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: Initiation
     override func viewDidLoad() {
         super.viewDidLoad()
-        userDetailRole.optionArray = ["User", "Admin"]
-        userDetailRole.arrowSize = 20
         if let userReceive = user{
+            let userID = Auth.auth().currentUser?.uid
+            ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {[self] snapshot in
+                let value = snapshot.value as? NSDictionary
+                let role = value?["role"] as? Int
+                if role == 2{
+                    userDetailRole.optionArray = ["Quản Trị Viên", "Người Dùng", "Người Quản Lý"]
+                }
+                else if role == 1 || userReceive.role == 1{
+                    userDetailRole.optionArray = ["Quản Trị Viên"]
+                }
+                
+            })
+            if userReceive.role == 2{
+                userDetailRole.text = "Quản Trị Viên"
+            }
+            else if userReceive.role == 1{
+                userDetailRole.text = "Người Quản Lý"
+            }
+            else{
+                userDetailRole.text = "Người Dùng"
+            }
+         
+            userDetailRole.arrowSize = 20
             userDetailName.text = userReceive.name
             userDetailTel.text = userReceive.phone
-            userDetailRole.text = userReceive.role == 1 ? "Admin" : "User"
             let url = URL(string: userReceive.image!)
             userDetailImg.sd_setImage(with: url, placeholderImage: UIImage(named: "profile_pic"));
         }
         userDetailImg.layer.cornerRadius = userDetailImg.frame.height / 2
     }
 }
-

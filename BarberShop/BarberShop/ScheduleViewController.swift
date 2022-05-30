@@ -19,13 +19,19 @@ class ScheduleViewController: UIViewController {
     }
     var databaseRef: DatabaseReference?
     var schedules = [Order]()
-    var user: User = User()
-    var service: Service = Service()
+    var user: User?
+    var service: Service?
+    func setUpSlideMenu()  {
+        let  menuBtn = UIBarButtonItem(image: UIImage(named: "hamburgerIcon"),  style: .plain , target: self.revealViewController() , action: #selector(SWRevealViewController.revealToggle(animated:)));
+        
+        self.navigationItem.setLeftBarButton(menuBtn, animated: true);
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpSlideMenu();
         databaseRef = Database.database().reference().child("orders")
-        databaseRef?.observe(.value, with: { snapshot in
+        databaseRef?.observe(.value, with: { [self] snapshot in
             guard let values = snapshot.value as? [String: Any] else {return}
             
             for value in values {
@@ -40,7 +46,7 @@ class ScheduleViewController: UIViewController {
                         if uid == customer["id"] as! String {
                             self.user = User(id: customer["id"] as! String
                                              , name: customer["name"] as! String
-                                             , phone: customer["phone"] as! String
+                                             , phone: customer["phone"] as! String, image: ""
                                              , role: 1)
                             
                             //service
@@ -55,16 +61,16 @@ class ScheduleViewController: UIViewController {
                             var id = order["id"]! as! String
                             
                             var timeOrder = order["timeOrder"]! as! Int64
-                            var timeO: Date = Date(milliseconds: timeOrder)
+                            var timeO: Date = Date(timeIntervalSince1970:  TimeInterval(timeOrder))
                             
                             var timeFinish = order["timeFinish"]! as! Int64
-                            var timeF: Date = Date(milliseconds: timeFinish)
+                            var timeF: Date = Date(timeIntervalSince1970:  TimeInterval(timeFinish))
                             
-                            var isFinish = order["finish"]!
+                            var isFinish = order["finish"] as! Int;
                             
                             
                             //schedule
-                            var schedule = Order(id: id , service: self.service, customer: self.user, timeOrder: timeO, timeFinish: timeF, isFinish: isFinish as! Int)
+                            let schedule = Order(id:id, service:self.service!, timeOrder:timeO , timeFinish:timeF, finish:isFinish);
                             
                             //print("schedule: \((schedule.customer?.name)!)")
                             
@@ -80,15 +86,15 @@ class ScheduleViewController: UIViewController {
                 }
             }
         })
-        //update
-        databaseRef?.observe(.childChanged, with: { (snapshot) -> Void in
-            let index = self.indexOfMessage(snapshot)
-            self.schedules[index].isFinish = snapshot.childSnapshot(forPath: "finish").value as? Int
-            print("finish: \(self.schedules[index].isFinish)")
-            self.tblView.reloadData()
-        })
-        
-        
+//        //update
+//        databaseRef?.observe(.childChanged, with: { (snapshot) -> Void in
+//            let index = self.indexOfMessage(snapshot)
+//            self.schedules[index].isFinish = snapshot.childSnapshot(forPath: "finish").value as? Int
+//            print("finish: \(self.schedules[index].isFinish)")
+//            self.tblView.reloadData()
+//        })
+//
+
         
         
         tblView.dataSource = self
@@ -143,23 +149,23 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let detailSch = storyboard?.instantiateViewController(withIdentifier: "ScheduleDetailController") as? ScheduleDetailController {
-            self.navigationController?.pushViewController(detailSch, animated: true)
-            let sch = schedules[indexPath.row]
-            let url:URL = URL(string: sch.service!.image)!
-            do {
-                let dulieu:Data = try Data(contentsOf: url)
-                detailSch.imgSch = UIImage(data: dulieu)!
-            }
-            catch {
-                print("Get image failed")
-            }
-            detailSch.nameSch = sch.service!.name
-            detailSch.dateSch = sch.timeOrder!
-            detailSch.priceSch = sch.service!.price
-            detailSch.desSch = sch.service!.description
-            detailSch.id = sch.id!
-        }
+//        if let detailSch = storyboard?.instantiateViewController(withIdentifier: "ScheduleDetailController") as? ScheduleDetailController {
+//            self.navigationController?.pushViewController(detailSch, animated: true)
+//            let sch = schedules[indexPath.row]
+//            let url:URL = URL(string: sch.service!.image)!
+//            do {
+//                let dulieu:Data = try Data(contentsOf: url)
+//                detailSch.imgSch = UIImage(data: dulieu)!
+//            }
+//            catch {
+//                print("Get image failed")
+//            }
+//            detailSch.nameSch = sch.service!.name
+//            detailSch.dateSch = sch.timeOrder!
+//            detailSch.priceSch = sch.service!.price
+//            detailSch.desSch = sch.service!.description
+//            detailSch.id = sch.id!
+//        }
     }
     
 }

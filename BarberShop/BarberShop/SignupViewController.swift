@@ -15,11 +15,11 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UITextField!
     var selectImage:UIImage?
-    
+    var isSuccsess = false;
     //btn
     @IBAction func btnOk(_ sender: Any) {
         upLooadUser();
-        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil);
+        dismiss(animated: false, completion: nil);
     }
     @IBAction func btnImage(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()

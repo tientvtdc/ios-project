@@ -47,6 +47,8 @@
 		9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */; };
 		9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB4A284117FB008EB5B0 /* ServiceListController.swift */; };
 		9BACBB50284117FB008EB5B0 /* ManageServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */; };
+		9BAD042F284544B0005B802B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD042C284544B0005B802B /* ScheduleViewController.swift */; };
+		9BAD0430284544B0005B802B /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD042D284544B0005B802B /* ScheduleTableViewCell.swift */; };
 		9BF48AE1283F58A500A871D0 /* OrderServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */; };
 		9BF48AE5283F79F200A871D0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF48AE4283F79F200A871D0 /* Order.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		9BACBB49284117FB008EB5B0 /* AddServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddServiceViewController.swift; sourceTree = "<group>"; };
 		9BACBB4A284117FB008EB5B0 /* ServiceListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceListController.swift; sourceTree = "<group>"; };
 		9BACBB4B284117FB008EB5B0 /* ManageServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageServiceTableViewCell.swift; sourceTree = "<group>"; };
+		9BAD042C284544B0005B802B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		9BAD042D284544B0005B802B /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderServiceViewController.swift; sourceTree = "<group>"; };
 		9BF48AE4283F79F200A871D0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +148,8 @@
 		9B254E66283D0CA500240CC7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BAD042D284544B0005B802B /* ScheduleTableViewCell.swift */,
+				9BAD042C284544B0005B802B /* ScheduleViewController.swift */,
 				9B3A17912845120600052D29 /* SignupViewController.swift */,
 				9B3A1785284501C200052D29 /* CustomUserTableViewCell.swift */,
 				9B3A1786284501C200052D29 /* UserDetailViewController.swift */,
@@ -310,6 +316,7 @@
 				9B3A1787284501C200052D29 /* UserTableViewController.swift in Sources */,
 				830DCA5B255E9EF2007F0911 /* HamburgerViewController.swift in Sources */,
 				9B3A17972845223300052D29 /* DetailOrderManagementViewController.swift in Sources */,
+				9BAD042F284544B0005B802B /* ScheduleViewController.swift in Sources */,
 				9B35FA6F283CB80100F9D077 /* DetailServiceViewController.swift in Sources */,
 				9B267C592843A2A600B169DD /* OrderListManagementViewController.swift in Sources */,
 				9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */,
@@ -319,6 +326,7 @@
 				9B3A177F2844C5C200052D29 /* OrderManagementTableViewCell.swift in Sources */,
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
 				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,
+				9BAD0430284544B0005B802B /* ScheduleTableViewCell.swift in Sources */,
 				830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */,
 				9B254BD1284360C100C5375F /* PersonProfileViewController.swift in Sources */,
 				9B3A17922845120600052D29 /* SignupViewController.swift in Sources */,
