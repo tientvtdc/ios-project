@@ -15,6 +15,16 @@ class Service {
     var description = "";
     var time = 0;
     var create_at = Date.init();
+    
+    init() {
+        self.id = ""
+        self.name = ""
+        self.image = ""
+        self.price = 0.0
+        self.description = ""
+        self.time = 0
+    }
+    
     init(id:String,name:String, image:String ,price:Double ,description:String ,time:Int) {
         self.id = id;
         self.name = name;

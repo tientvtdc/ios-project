@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54EB23672842AE77007D1D47 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB23662842AE77007D1D47 /* ScheduleTableViewController.swift */; };
+		54EB23692842AEF0007D1D47 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB23682842AEF0007D1D47 /* ScheduleTableViewCell.swift */; };
+		54EB236B28432741007D1D47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB236A28432741007D1D47 /* User.swift */; };
+		54EB236F28437356007D1D47 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB236E28437356007D1D47 /* ScheduleViewController.swift */; };
+		54EB237128437CEF007D1D47 /* ScheduleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB237028437CEF007D1D47 /* ScheduleDetailController.swift */; };
 		830DCA44255E9DB1007F0911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA43255E9DB1007F0911 /* AppDelegate.swift */; };
 		830DCA4B255E9DB1007F0911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830DCA49255E9DB1007F0911 /* Main.storyboard */; };
 		830DCA4D255E9DB2007F0911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 830DCA4C255E9DB2007F0911 /* Assets.xcassets */; };
@@ -24,6 +29,7 @@
 		9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B254E78283D361C00240CC7 /* HomeViewController.swift */; };
 		9B279779283A83A700117B74 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B279778283A83A700117B74 /* Service.swift */; };
 		9B27977D283A939C00117B74 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27977C283A939C00117B74 /* FirebasePerformance */; };
+		9B27CDED283DC52D00BFAB20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27CDEC283DC52D00BFAB20 /* ViewController.swift */; };
 		9B27CDF1283DE44B00BFAB20 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B27CDF0283DE44B00BFAB20 /* SDWebImageSwiftUI */; };
 		9B2A52ED283BB08B0064D82B /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EC283BB08B0064D82B /* FirebaseDynamicLinks */; };
 		9B2A52F0283BB12D0064D82B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2A52EF283BB12D0064D82B /* FirebaseDatabase */; };
@@ -42,6 +48,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54EB23662842AE77007D1D47 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		54EB23682842AEF0007D1D47 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		54EB236A28432741007D1D47 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		54EB236E28437356007D1D47 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		54EB237028437CEF007D1D47 /* ScheduleDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailController.swift; sourceTree = "<group>"; };
 		830DCA40255E9DB1007F0911 /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830DCA43255E9DB1007F0911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		830DCA4A255E9DB1007F0911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +67,7 @@
 		9B254E75283D316A00240CC7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9B254E78283D361C00240CC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B279778283A83A700117B74 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		9B27CDEC283DC52D00BFAB20 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B2A52F5283BD9840064D82B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagementViewController.swift; sourceTree = "<group>"; };
 		9B35FA6A283CB6FC00F9D077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,9 +145,13 @@
 				9B35FA6E283CB80100F9D077 /* DetailServiceViewController.swift */,
 				9B254E78283D361C00240CC7 /* HomeViewController.swift */,
 				9BF48AE0283F58A500A871D0 /* OrderServiceViewController.swift */,
+				9B27CDEC283DC52D00BFAB20 /* ViewController.swift */,
 				830DCA5F255EAABA007F0911 /* ServiceTableViewCell.swift */,
 				9B4D857B283E8BB0005AB285 /* VerifyCodeLoginViewController.swift */,
-				9B2CD31828425D7C001C49A0 /* HomeManagementViewController.swift */,
+				54EB23662842AE77007D1D47 /* ScheduleTableViewController.swift */,
+				54EB23682842AEF0007D1D47 /* ScheduleTableViewCell.swift */,
+				54EB236E28437356007D1D47 /* ScheduleViewController.swift */,
+				54EB237028437CEF007D1D47 /* ScheduleDetailController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -156,6 +172,7 @@
 				9B254E6C283D10B600240CC7 /* NSNumberExtension.swift */,
 				9B279778283A83A700117B74 /* Service.swift */,
 				9BF48AE4283F79F200A871D0 /* Order.swift */,
+				54EB236A28432741007D1D47 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -267,6 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B27CDED283DC52D00BFAB20 /* ViewController.swift in Sources */,
+				54EB237128437CEF007D1D47 /* ScheduleDetailController.swift in Sources */,
 				9B2A52F6283BD9840064D82B /* LoginViewController.swift in Sources */,
 				9BACBB4E284117FB008EB5B0 /* AddServiceViewController.swift in Sources */,
 				9BACBB4D284117FB008EB5B0 /* EditSeriveViewController.swift in Sources */,
@@ -280,6 +299,7 @@
 				9B254E79283D361C00240CC7 /* HomeViewController.swift in Sources */,
 				9B254E76283D316A00240CC7 /* SWRevealViewController.m in Sources */,
 				9B279779283A83A700117B74 /* Service.swift in Sources */,
+				54EB23692842AEF0007D1D47 /* ScheduleTableViewCell.swift in Sources */,
 				9BF48AE5283F79F200A871D0 /* Order.swift in Sources */,
 				830DCA61255EAABA007F0911 /* ServiceTableViewCell.swift in Sources */,
 				9BACBB4F284117FB008EB5B0 /* ServiceListController.swift in Sources */,

@@ -10,14 +10,15 @@ import Foundation
 class Order {
     var id: String?
     var service:Service?
-    var customer:String?
+    var customer:User?
     var timeOrder: Date?
     var timeFinish: Date?
-    var isFinish:Bool?
+    var isFinish: Int?
     
-    init(id:String, service:Service, timeOrder:Date , timeFinish:Date, isFinish:Bool) {
+    init(id:String, service:Service,customer:User, timeOrder:Date , timeFinish:Date, isFinish:Int) {
         self.id  = id ;
         self.service = service;
+        self.customer = customer
         self.timeOrder = timeOrder;
         self.timeFinish = timeFinish;
         self.isFinish = isFinish;
