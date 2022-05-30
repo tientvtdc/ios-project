@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class ScheduleViewController: UIViewController {
     
@@ -31,43 +32,51 @@ class ScheduleViewController: UIViewController {
                 if let order = value.value as? [String: Any] {
                     //customer
                     if let customer = order["customer"] as? [String: Any] {
-                        self.user = User(id: customer["id"] as! String
-                                         , name: customer["name"] as! String
-                                         , phone: customer["phone"] as! String
-                                         , role: 1)
                         
+                        //kiểm tra lich của khách hàng có trong danh firebase
+                        //id client
+                        let uid = Auth.auth().currentUser!.uid
+                        //print("id: \(uid)")
+                        if uid == customer["id"] as! String {
+                            self.user = User(id: customer["id"] as! String
+                                             , name: customer["name"] as! String
+                                             , phone: customer["phone"] as! String
+                                             , role: 1)
+                            
+                            //service
+                            if let services = order["service"] as? [String: Any] {
+                                self.service = Service(id: services["id"] as! String
+                                                       , name: services["name"] as! String
+                                                       , image: services["image"] as! String
+                                                       , price: services["price"] as! Double
+                                                       , description: services["description"] as! String
+                                                       , time: services["time"] as! Int)
+                            }
+                            var id = order["id"]! as! String
+                            
+                            var timeOrder = order["timeOrder"]! as! Int64
+                            var timeO: Date = Date(milliseconds: timeOrder)
+                            
+                            var timeFinish = order["timeFinish"]! as! Int64
+                            var timeF: Date = Date(milliseconds: timeFinish)
+                            
+                            var isFinish = order["finish"]!
+                            
+                            
+                            //schedule
+                            var schedule = Order(id: id , service: self.service, customer: self.user, timeOrder: timeO, timeFinish: timeF, isFinish: isFinish as! Int)
+                            
+                            //print("schedule: \((schedule.customer?.name)!)")
+                            
+                            self.schedules.append(schedule)
+                            let row = self.schedules.count
+                            let indexPath = IndexPath(row: row-1, section: 0)
+                            self.tblView.insertRows(at: [indexPath], with: .automatic)
+                            
+                            //print("s: \(self.schedules)")
+                        }
                     }
-                    //service
-                    if let services = order["service"] as? [String: Any] {
-                        self.service = Service(id: services["id"] as! String
-                                               , name: services["name"] as! String
-                                               , image: services["image"] as! String
-                                               , price: services["price"] as! Double
-                                               , description: services["description"] as! String
-                                               , time: services["time"] as! Int)
-                    }
-                    var id = order["id"]! as! String
                     
-                    var timeOrder = order["timeOrder"]! as! Int64
-                    var timeO: Date = Date(milliseconds: timeOrder)
-                    
-                    var timeFinish = order["timeFinish"]! as! Int64
-                    var timeF: Date = Date(milliseconds: timeFinish)
-                    
-                    var isFinish = order["finish"]!
-                    
-                    
-                    //schedule
-                    var schedule = Order(id: id , service: self.service, customer: self.user, timeOrder: timeO, timeFinish: timeF, isFinish: isFinish as! Int)
-                    
-                    //print("schedule: \((schedule.customer?.name)!)")
-                    
-                    self.schedules.append(schedule)
-                    let row = self.schedules.count
-                    let indexPath = IndexPath(row: row-1, section: 0)
-                    self.tblView.insertRows(at: [indexPath], with: .automatic)
-                    
-                    print("s: \(self.schedules)")
                 }
             }
         })
@@ -128,7 +137,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         
-        print("s: \(schedules)")
+        //print("s: \(schedules)")
         
         fatalError("can not create the cell");
     }
@@ -154,3 +163,10 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+//thong bao
+//let alert = UIAlertController(title: "Barber Shop", message: "Bạn chưa có lịch cắt tóc nào !", preferredStyle: .alert)
+//let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+//}
+//alert.addAction(ationOk);
+//self.present(alert, animated: true, completion: nil);
