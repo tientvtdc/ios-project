@@ -81,21 +81,20 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
  
-//            if segue.identifier == "ShowServiceDetail" {
-//                if   let navigationController = segue.destination as? UINavigationController{
-//                    if let vcDeTai = navigationController.viewControllers.first as? DetailServiceViewController{
-//                        vcDeTai.service = serviceDetail;
-//                    }
-//                }
-//
-//            }
+            if segue.identifier == "ShowOrderManagementDetail" {
+                if   let navigationController = segue.destination as? UINavigationController{
+                    if let vcDeTai = navigationController.viewControllers.first as? DetailOrderManagementViewController{
+                        vcDeTai.orserDetail = detailOrder;
+                    }
+                }
+            }
         
     }
-  
+    var detailOrder:Order?;
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let i = indexPath.row;
-//        serviceDetail = serviceList[i];
-//        performSegue(withIdentifier: "ShowServiceDetail", sender: self)
+        detailOrder = orderList[i];
+        performSegue(withIdentifier: "ShowOrderManagementDetail", sender: self)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y

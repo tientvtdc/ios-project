@@ -18,7 +18,8 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     //btn
     @IBAction func btnOk(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
+        upLooadUser();
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil);
     }
     @IBAction func btnImage(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
@@ -82,8 +83,8 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
                 var ref: DatabaseReference!
                 
                 ref = Database.database().reference()
-                guard let key = ref.child("users").childByAutoId().key else { return }
-                ref.child("users/\(key)").setValue(["id": user.id,
+             
+                ref.child("users/\(id)").setValue(["id": user.id,
                                                        "name": user.name,
                                                        "phone": user.phone,
                                                        "image": user.image,

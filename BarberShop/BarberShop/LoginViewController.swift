@@ -17,8 +17,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil  {
-               self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);
-           }
+            var ref: DatabaseReference!
+            ref = Database.database().reference();
+            ref.child("users").child(Auth.auth().currentUser!.uid).observeSingleEvent(of: .value, with: { snapshot in
+              // Get user value
+              let value = snapshot.value as? NSDictionary
+                if value != nil {
+                    self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);}
+           })
+    }
     }
     @IBAction func unwindToLoginVC(_ unwindSegue: UIStoryboardSegue) {
            if let vcB = unwindSegue.source as? VerifyCodeLoginViewController {
@@ -27,6 +34,15 @@ class LoginViewController: UIViewController {
                        self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);
                    }
             }
+           }else{
+            var ref: DatabaseReference!
+            ref = Database.database().reference();
+            ref.child("users").child(Auth.auth().currentUser!.uid).observeSingleEvent(of: .value, with: { snapshot in
+              // Get user value
+              let value = snapshot.value as? NSDictionary
+                if value != nil {
+                    self.performSegue(withIdentifier: "goToHomeFromLoginScreen", sender: nil);}
+           })
            }
        }
     @IBAction func clickLogin(_ sender: Any) {
