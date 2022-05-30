@@ -27,7 +27,7 @@ class HamburgerViewController: UIViewController {
     {
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
+        let userID = Auth.auth().currentUser?.uid;
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { [self] snapshot in
           // Get user value
           let value = snapshot.value as? NSDictionary

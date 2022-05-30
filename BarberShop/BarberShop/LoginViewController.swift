@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
             
         }else{
             if segue.identifier == "goToHomeFromLoginScreen" {
-//                print(2);
+//                
             }
         }
     }

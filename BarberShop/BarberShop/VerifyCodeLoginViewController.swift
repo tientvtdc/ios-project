@@ -51,15 +51,22 @@ print(phone)
               }
               // User is signed in
               // ...
-                self.isSuccessLogin = true;
-                self.dismiss(animated: false, completion: nil);
+                
                 
                 if let uid = authResult?.user.uid {
                     var ref: DatabaseReference!
                     ref = Database.database().reference();
-                    ref.child("user").child(uid).observeSingleEvent(of: .value, with: { snapshot in
+                    ref.child("users").child(uid).observeSingleEvent(of: .value, with: { snapshot in
                       // Get user value
-                 //     let value = snapshot.value as? NSDictionary
+                      let value = snapshot.value as? NSDictionary
+                        if value != nil {
+                            self.isSuccessLogin = true;
+                            self.dismiss(animated: false, completion: nil);
+                            
+                        } else{
+                            self.performSegue(withIdentifier: "goToSignup", sender: nil);
+                        }
+                            
    //                   let username = value?["username"] as? String ?? ""
 //                      let user = User(username: username)
                     

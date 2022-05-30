@@ -20,6 +20,13 @@ class User {
         self.phone = phone;
         self.image = image;
     }
+    init(id:String, name:String, phone:String, image:String, role:Int) {
+        self.id = id;
+        self.name = name;
+        self.phone = phone;
+        self.image = image;
+        self.role = role;
+    }
     init(dictionary: [String: Any]) {
             self.id = dictionary["id"] as? String ?? ""
             self.name = dictionary["name"] as? String ?? ""

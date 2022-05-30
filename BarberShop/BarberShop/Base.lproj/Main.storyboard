@@ -684,6 +684,7 @@
                     <connections>
                         <outlet property="textFieldCodeAuth" destination="bzR-Ep-B77" id="cnd-w0-jer"/>
                         <segue destination="h8E-ps-tY6" kind="show" identifier="goToHomeFromVerifyCode" id="I8v-xQ-E5m"/>
+                        <segue destination="YGZ-Sx-g8g" kind="show" identifier="goToSignup" id="QmU-LO-1df"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVS-Dc-30Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1648,10 +1649,90 @@ EFRo4budaSBnaWFuA
             </objects>
             <point key="canvasLocation" x="-3364" y="-1640"/>
         </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="xgP-2J-30U">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" modalPresentationStyle="fullScreen" id="YGZ-Sx-g8g" customClass="SignupViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xzq-iL-Bm4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header" translatesAutoresizingMaskIntoConstraints="NO" id="YOK-Uc-dVK">
+                                <rect key="frame" x="87" y="94" width="240" height="300"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YOK-Uc-dVK" secondAttribute="height" multiplier="4:5" id="NEk-P4-GBt"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AfX-Dr-qvI" appends="YES" id="BCS-ui-NWm"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="PDv-Co-bw9">
+                                <rect key="frame" x="20" y="434" width="374" height="79"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên của bạn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-Hi-Gay">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d48-Um-bNl">
+                                        <rect key="frame" x="0.0" y="45" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xK-qd-GSL">
+                                <rect key="frame" x="324" y="553" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="E8u-RK-Wq6"/>
+                                    <constraint firstAttribute="width" constant="70" id="crz-oN-ei5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <size key="titleShadowOffset" width="8" height="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="arrow.forward" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnOk:" destination="YGZ-Sx-g8g" eventType="touchUpInside" id="zlu-z4-WbH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2j3-dz-xJq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7xK-qd-GSL" firstAttribute="top" secondItem="PDv-Co-bw9" secondAttribute="bottom" constant="40" id="COd-bY-Qgd"/>
+                            <constraint firstItem="PDv-Co-bw9" firstAttribute="leading" secondItem="2j3-dz-xJq" secondAttribute="leading" constant="20" id="Edo-xo-FPN"/>
+                            <constraint firstItem="YOK-Uc-dVK" firstAttribute="top" secondItem="2j3-dz-xJq" secondAttribute="top" constant="50" id="I4d-jT-G9p"/>
+                            <constraint firstItem="PDv-Co-bw9" firstAttribute="top" secondItem="YOK-Uc-dVK" secondAttribute="bottom" constant="40" id="Ms1-Ox-JGd"/>
+                            <constraint firstItem="YOK-Uc-dVK" firstAttribute="leading" secondItem="2j3-dz-xJq" secondAttribute="leading" constant="87" id="N1g-iN-ugT"/>
+                            <constraint firstItem="2j3-dz-xJq" firstAttribute="trailing" secondItem="PDv-Co-bw9" secondAttribute="trailing" constant="20" id="PGj-8H-2Y1"/>
+                            <constraint firstItem="YOK-Uc-dVK" firstAttribute="centerX" secondItem="xzq-iL-Bm4" secondAttribute="centerX" id="VL7-sC-ATC"/>
+                            <constraint firstItem="2j3-dz-xJq" firstAttribute="trailing" secondItem="7xK-qd-GSL" secondAttribute="trailing" constant="20" id="gaG-sM-P3J"/>
+                            <constraint firstItem="2j3-dz-xJq" firstAttribute="trailing" secondItem="YOK-Uc-dVK" secondAttribute="trailing" constant="87" id="h7h-yh-ikX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wcp-Mh-2Ed"/>
+                    <connections>
+                        <outlet property="image" destination="YOK-Uc-dVK" id="Dge-c0-iTq"/>
+                        <outlet property="name" destination="d48-Um-bNl" id="Yfa-12-wv7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWT-Wh-gae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AfX-Dr-qvI">
+                    <connections>
+                        <action selector="btnImage:" destination="YGZ-Sx-g8g" id="SsQ-m2-fGG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2904" y="1497"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Kay-l7-N0Y"/>
-        <segue reference="36V-73-Gss"/>
+        <segue reference="I8v-xQ-E5m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>

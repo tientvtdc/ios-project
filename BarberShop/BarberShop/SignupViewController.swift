@@ -12,14 +12,13 @@ import Firebase
 
 class SignupViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var id_phone: IdPhone?
-    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UITextField!
     var selectImage:UIImage?
     
     //btn
     @IBAction func btnOk(_ sender: Any) {
+        dismiss(animated: true, completion: nil);
     }
     @IBAction func btnImage(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
@@ -48,7 +47,6 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("id phone is: \(String(describing: id_phone))")
     }
     
     func upLooadUser() {
@@ -77,8 +75,9 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate & 
                 let urlString = url.absoluteString
                 UserDefaults.standard.set(urlString, forKey: "url")
                 //Upload User
-                
-                let user = User(id: self.id_phone!.id, name: self.name.text!, phone: id_phone!.phone, image: urlString, role: 0)
+                let phone = Auth.auth().currentUser!.phoneNumber!;
+                let id = Auth.auth().currentUser!.uid;
+                let user = User(id: id, name: self.name.text!, phone: phone, image: urlString, role: 0);
                 
                 var ref: DatabaseReference!
                 
