@@ -135,10 +135,17 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
             catch {
                 print("Get image failed")
             }
+            let dateFormatter = DateFormatter()
+
+            // Set Date Format
+            dateFormatter.dateFormat = "HH:mm dd/MM/YY"
+
+            // Convert Date to String
+            
             
             cell.nameSchedule.text = schedule.service?.name
-            cell.dateSchedule.text = schedule.timeOrder?.description
-            cell.priceSchedule.text = String((schedule.service?.price)!)
+            cell.dateSchedule.text = dateFormatter.string(from: schedule.timeOrder!);
+            cell.priceSchedule.text = NSNumber(value: schedule.service!.price) .toVND()
             
             return cell
         }

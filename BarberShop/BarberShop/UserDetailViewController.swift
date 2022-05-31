@@ -34,7 +34,7 @@ class UserDetailViewController: UIViewController {
         }
         
         ref = Database.database().reference();
-        let id = user!.id!;
+        let id = user!.id!
         ref?.child("users/\(id)/role").setValue(role)
         self.navigationController?.popViewController(animated: true)
     }
@@ -44,26 +44,29 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
         if let userReceive = user{
             let userID = Auth.auth().currentUser?.uid
-            ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {[self] snapshot in
-                let value = snapshot.value as? NSDictionary
-                let role = value?["role"] as? Int
+            ref?.child("users/\(userID ?? "")/role").getData(completion: { [self]error, snapshot in
+                guard error == nil else{
+                    return
+                }
+                let role = snapshot.value as? Int
+                self.userDetailRole.text = String(role!)
                 if role == 2{
-                    userDetailRole.optionArray = ["Quản Trị Viên", "Người Dùng", "Người Quản Lý"]
+                    self.userDetailRole.optionArray = ["Quản Trị Viên", "Người Dùng", "Người Quản Lý"]
                 }
                 else if role == 1 || userReceive.role == 1{
-                    userDetailRole.optionArray = ["Quản Trị Viên"]
+                    self.userDetailRole.optionArray = ["Quản Trị Viên"]
                 }
                 
             })
-            if userReceive.role == 2{
-                userDetailRole.text = "Quản Trị Viên"
-            }
-            else if userReceive.role == 1{
-                userDetailRole.text = "Người Quản Lý"
-            }
-            else{
-                userDetailRole.text = "Người Dùng"
-            }
+//            if userReceive.role == 2{
+//                userDetailRole.text = "Quản Trị Viên"
+//            }
+//            else if userReceive.role == 1{
+//                userDetailRole.text = "Người Quản Lý"
+//            }
+//            else{
+//                userDetailRole.text = "Người Dùng"
+//            }
          
             userDetailRole.arrowSize = 20
             userDetailName.text = userReceive.name
