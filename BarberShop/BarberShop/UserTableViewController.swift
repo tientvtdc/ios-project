@@ -24,6 +24,23 @@ class UserTableViewController: UIViewController , UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference();
+        let userID = Auth.auth().currentUser?.uid;
+        ref!.child("users").child(userID!).observeSingleEvent(of: .value, with: { [self] snapshot in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+            let role = value?["role"] as? Int ;
+            if role != 2 {
+                let alert = UIAlertController(title: "Thông báo ", message: "Chức năng dành cho quản trị viên", preferredStyle: .alert)
+                let ationOk = UIAlertAction(title: "OK", style: .default) { (action) in
+                        dismiss(animated: true, completion: nil)
+                    }
+       
+                alert.addAction(ationOk);
+                present(alert, animated: true, completion: nil)
+            }
+        }) { error in
+          print(error.localizedDescription)
+        }
         fetchUser()
     }
     

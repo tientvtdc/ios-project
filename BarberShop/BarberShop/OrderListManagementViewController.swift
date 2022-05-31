@@ -11,7 +11,7 @@ import FirebaseStorage;
 import Firebase;
 import SDWebImage
 class OrderListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     
     var storageRef:StorageReference!;
     var orderList = [Order]();
@@ -19,8 +19,8 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
     var isEnd = false;
     
     var fetchingMore = false
-       var endReached = false
-       let leadingScreensForBatching:CGFloat = 3.0
+    var endReached = false
+    let leadingScreensForBatching:CGFloat = 3.0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,26 +33,26 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         switch section {
-         case 0:
-             return orderList.count
-         case 1:
-             return fetchingMore ? 1 : 0
-         default:
-             return 0
-         }
-     }
-     
+        switch section {
+        case 0:
+            return orderList.count
+        case 1:
+            return fetchingMore ? 1 : 0
+        default:
+            return 0
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : OrderManagementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "OrderManagementTableViewCell", for: indexPath) as! OrderManagementTableViewCell
         let order = self.orderList[indexPath.row];
         let dateFormatter = DateFormatter()
-
+        
         // Set Date Format
         dateFormatter.dateFormat = "HH:mm dd/MM/YY"
-
+        
         // Convert Date to String
         
         
@@ -80,14 +80,14 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- 
-            if segue.identifier == "ShowOrderManagementDetail" {
-                if   let navigationController = segue.destination as? UINavigationController{
-                    if let vcDeTai = navigationController.viewControllers.first as? DetailOrderManagementViewController{
-                        vcDeTai.orserDetail = detailOrder;
-                    }
+        
+        if segue.identifier == "ShowOrderManagementDetail" {
+            if   let navigationController = segue.destination as? UINavigationController{
+                if let vcDeTai = navigationController.viewControllers.first as? DetailOrderManagementViewController{
+                    vcDeTai.orserDetail = detailOrder;
                 }
             }
+        }
         
     }
     var detailOrder:Order?;
@@ -112,9 +112,9 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
     }
     func beginBatchFetch() {
         fetchingMore = true
-//        self.tableView.reloadSections(IndexSet(integer: 1), with: .fade);
+        //        self.tableView.reloadSections(IndexSet(integer: 1), with: .fade);
         fetchPosts { newPosts in
-   
+            
             self.orderList.append(contentsOf: newPosts)
             self.fetchingMore = false
             self.endReached = newPosts.count == 0
@@ -137,42 +137,49 @@ class OrderListManagementViewController: UIViewController, UITableViewDelegate, 
             var tempPosts = [Order]()
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
-                    let orderDict = childSnapshot.value as? [String:Any],
-                    let serviceDict = orderDict["service"] as? [String:Any],
-                    let name =  serviceDict["name"] as? String,
-                    let description = serviceDict["description"] as? String ,
-                    let image = serviceDict["image"] as? String,
-                    let price = serviceDict["price"] as? Double,
-                    let time = serviceDict["time"] as? Int,
-                    let id = serviceDict["id"] as? String {
+                   let orderDict = childSnapshot.value as? [String:Any],
+                   let serviceDict = orderDict["service"] as? [String:Any],
+                   let name =  serviceDict["name"] as? String,
+                   let description = serviceDict["description"] as? String ,
+                   let image = serviceDict["image"] as? String,
+                   let price = serviceDict["price"] as? Double,
+                   let time = serviceDict["time"] as? Int,
+                   let id = serviceDict["id"] as? String {
                     print(id)
                     if childSnapshot.key != lastPost?.id && childSnapshot.key != self.orderList.first?.id{
-                      let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: time)
+                        let sv =  Service(id: id, name: name, image: image, price: price, description: description, time: time)
                         if let finish = orderDict["finish"] as? Int,
-                        let timeOrder = orderDict["timeOrder"] as? Int,
-                        let timeFinish = orderDict["timeFinish"] as? Int,
-                        let customer = orderDict["customer"] as? [String:Any]
+                           let timeOrder = orderDict["timeOrder"] as? Int,
+                           let timeFinish = orderDict["timeFinish"] as? Int,
+                           let customer = orderDict["customer"] as? [String:Any]
                         {
                             let idOrder = childSnapshot.key;
-//                            var isContain = false;
-//                            for orderIn in self.orderList {
-//                                if idOrder == orderIn.id {
-//                                    isContain = true;
-//                                }
-//                            }
-//                            if !isContain {
-                                let nameCustomer = customer["name"] as! String;
-                                let phoneCustomer = customer["phone"] as! String;
-                                tempPosts.append(Order(id: idOrder,service: sv, timeOrder: Date(timeIntervalSince1970: TimeInterval(timeOrder)), timeFinish: Date(timeIntervalSince1970: TimeInterval(timeFinish)) , finish: finish,  customer: User(id: "", name: nameCustomer, phone: phoneCustomer, image: "")));
-                           // }
+                            //                            var isContain = false;
+                            //                            for orderIn in self.orderList {
+                            //                                if idOrder == orderIn.id {
+                            //                                    isContain = true;
+                            //                                }
+                            //                            }
+                            //                            if !isContain {
+                            let nameCustomer = customer["name"] as! String;
+                            let phoneCustomer = customer["phone"] as! String;
+                            tempPosts.append(Order(id: idOrder,service: sv, timeOrder: Date(timeIntervalSince1970: TimeInterval(timeOrder)), timeFinish: Date(timeIntervalSince1970: TimeInterval(timeFinish)) , finish: finish,  customer: User(id: "", name: nameCustomer, phone: phoneCustomer, image: "")));
+                            // }
                         }
                         
                     }
                     
                 }
             }
-        
+            
             return completion(tempPosts.reversed())
         })
+    }
+    // MARK: Set event when back to this monitor
+    @IBAction func unwindToUserTableViewControlelr(_ unwindSegue: UIStoryboardSegue) {
+        self.orderList.removeAll();
+        fetchingMore = false
+        endReached = false
+        beginBatchFetch();
     }
 }

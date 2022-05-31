@@ -23,12 +23,13 @@ class UserDetailViewController: UIViewController {
     // MARK: Set button save event listener
     @IBAction func btnSaveUser(_ sender: Any) {
         var role = 0
-        if userDetailRole.text == "Người Quản Lý"{
+        if userDetailRole.text == "Quản Lý"{
             role = 1
         }
         else if userDetailRole.text == "Người Dùng"{
             role = 0
         }
+        else if userDetailRole.text == "Quản Trị Viên"{role = 2}
         else{
             role = user!.role!
         }
@@ -42,31 +43,18 @@ class UserDetailViewController: UIViewController {
     // MARK: Initiation
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userDetailRole.optionArray = ["Quản Trị Viên", "Người Dùng", "Quản Lý"];
+ 
         if let userReceive = user{
-            let userID = Auth.auth().currentUser?.uid
-            ref?.child("users/\(userID ?? "")/role").getData(completion: { [self]error, snapshot in
-                guard error == nil else{
-                    return
-                }
-                let role = snapshot.value as? Int
-                self.userDetailRole.text = String(role!)
-                if role == 2{
-                    self.userDetailRole.optionArray = ["Quản Trị Viên", "Người Dùng", "Người Quản Lý"]
-                }
-                else if role == 1 || userReceive.role == 1{
-                    self.userDetailRole.optionArray = ["Quản Trị Viên"]
-                }
-                
-            })
-//            if userReceive.role == 2{
-//                userDetailRole.text = "Quản Trị Viên"
-//            }
-//            else if userReceive.role == 1{
-//                userDetailRole.text = "Người Quản Lý"
-//            }
-//            else{
-//                userDetailRole.text = "Người Dùng"
-//            }
+            if userReceive.role == 2{
+                userDetailRole.text = "Quản Trị Viên"
+            }
+            else if userReceive.role == 1{
+                userDetailRole.text = "Quản Lý"
+            }
+            else{
+                userDetailRole.text = "Người Dùng"
+            }
          
             userDetailRole.arrowSize = 20
             userDetailName.text = userReceive.name
